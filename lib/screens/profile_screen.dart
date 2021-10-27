@@ -3,9 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:foody/components/profile_widgets.dart';
 
-
 class ProfilePage extends StatefulWidget {
-   static const String id = 'profile_screen';
+    static const String id = 'profile_screen';
 
   @override
   _ProfilePageState createState() => _ProfilePageState();
@@ -39,7 +38,7 @@ class _ProfilePageState extends State<ProfilePage> {
         child: ListView(
           children: [
             ProfileWidget(
-              imagePath: 'images/photo1.jpg',
+              imagePath: 'images/logo1.png',
               onClicked: () async {},
             ),
             SizedBox(

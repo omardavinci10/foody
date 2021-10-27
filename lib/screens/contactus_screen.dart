@@ -27,7 +27,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                 Center(
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
-                    child: Image.asset('images/contact.jpg'),
+                    child: Image.asset('images/contact.png'),
                   ),
                 ),
                 Card(

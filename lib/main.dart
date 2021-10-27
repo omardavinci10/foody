@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foody/screens/contactus_screen.dart';
 import 'package:foody/screens/splash_screen.dart';
 import 'package:foody/screens/welcome_screen.dart';
 import 'package:foody/screens/login_screen.dart';
@@ -21,6 +22,7 @@ class Foody extends StatelessWidget {
         LoginScreen.id: (context) => LoginScreen(),
         RegistrationScreen.id: (context) => RegistrationScreen(),
         ProfilePage.id: (context) => ProfilePage(),
+        ContactUsScreen.id: (context) => ContactUsScreen(),
       },
     );
   }
