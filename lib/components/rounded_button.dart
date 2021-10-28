@@ -18,11 +18,12 @@ class RoundedButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
         child: MaterialButton(
           onPressed: onPressed,
+          hoverColor: Colors.black,
           minWidth: 200.0,
           height: 42.0,
           child: Text(
             title,
-            style: GoogleFonts.ubuntu(
+            style: TextStyle(
               color: Colors.white,
             ),
           ),

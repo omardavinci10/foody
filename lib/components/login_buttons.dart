@@ -11,48 +11,46 @@ class LoginButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> mySocials = [];
     mySocials.add(
-      Flexible(
-        child: AppleAuthButton(
-          text: 'Apple',
-          style: kAuthButtonStyle,
-          onPressed: () {},
-          darkMode: false,
+      Expanded(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: AppleAuthButton(
+            text: 'Apple',
+            style: kAuthButtonStyle,
+            onPressed: () {},
+            darkMode: false,
+          ),
         ),
       ),
     );
     mySocials.add(
-      SizedBox(
-        width: 5.0,
-      ),
-    );
-    mySocials.add(
-      Flexible(
-        child: GoogleAuthButton(
-          text: 'Google',
-          style: kAuthButtonStyle,
-          onPressed: () {},
-          darkMode: false,
+      Expanded(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GoogleAuthButton(
+            text: 'Google',
+            style: kAuthButtonStyle,
+            onPressed: () {},
+            darkMode: false,
+          ),
         ),
       ),
     );
     mySocials.add(
-      SizedBox(
-        width: 5.0,
-      ),
-    );
-    mySocials.add(
-      Flexible(
-        child: FacebookAuthButton(
-          text: 'Facebook',
-          style: kAuthButtonStyle,
-          onPressed: () {},
-          darkMode: false,
+      Expanded(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: FacebookAuthButton(
+            text: 'Facebook',
+            style: kAuthButtonStyle,
+            onPressed: () {},
+            darkMode: false,
+          ),
         ),
       ),
     );
     return Row(
       children: mySocials,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
     );
   }
 }

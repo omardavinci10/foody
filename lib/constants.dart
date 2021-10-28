@@ -24,6 +24,13 @@ const kMessageContainerDecoration = BoxDecoration(
 
 const kTextFieldDecoration = InputDecoration(
   hintText: '',
+  labelText: '',
+  labelStyle: TextStyle(
+    color: Colors.black38,
+  ),
+  hintStyle: TextStyle(
+    color: Colors.black38,
+  ),
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
   border: OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(10.0)),
@@ -69,14 +76,15 @@ const kLightGreyColorInHex = Colors.white;
 const kOrangeColorInHex = Color(0xFFF89C29);
 
 const kAuthButtonStyle = AuthButtonStyle(
-  borderRadius: 10.0,
+  borderRadius: 5.0,
   buttonColor: Colors.white,
-  borderColor: Colors.black26,
+  borderColor: Colors.black12,
   iconSize: 20.0,
+  borderWidth: 1.0,
   padding: EdgeInsets.all(8.0),
   textStyle: TextStyle(
     fontSize: 12.0,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w600,
     color: Colors.black54,
   ),
 );

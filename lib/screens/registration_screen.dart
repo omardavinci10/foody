@@ -51,12 +51,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Urbanist-Bold',
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 15.0,
                   ),
                 ],
               ),
@@ -70,6 +68,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       displayName = value;
                     },
                     decoration: kTextFieldDecoration.copyWith(
+                      labelText: 'Name',
                       hintText: 'Enter your name',
                     ),
                   ),
@@ -83,6 +82,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       email = value;
                     },
                     decoration: kTextFieldDecoration.copyWith(
+                      labelText: 'Email address',
                       hintText: 'Enter your email address',
                     ),
                   ),
@@ -96,6 +96,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       phone = value;
                     },
                     decoration: kTextFieldDecoration.copyWith(
+                      labelText: 'Phone number',
                       hintText: 'Enter your phone number',
                     ),
                   ),
@@ -208,6 +209,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               style: TextStyle(
                                 color: kOrangeColorInHex,
                                 fontWeight: FontWeight.bold,
+                                fontFamily: 'Urbanist-Bold',
                               ),
                             ),
                             onTap: () {
