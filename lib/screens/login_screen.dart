@@ -55,15 +55,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     padding: const EdgeInsets.symmetric(vertical: 15.0),
                     child: Text(
                       'Welcome Back!',
-                      style: GoogleFonts.openSansCondensed(
+                      style: TextStyle(
                         color: Colors.black,
-                        fontSize: 20.0,
+                        fontSize: 22.0,
+                        fontFamily: 'Urbanist-Bold',
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 15.0,
                   ),
                 ],
               ),
@@ -78,7 +76,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       phone = value;
                     },
                     decoration: kTextFieldDecoration.copyWith(
-                      hintText: 'Phone',
+                      labelText: 'Phone',
+                      hintText: 'Enter your phone number',
                     ),
                   ),
                   SizedBox(
@@ -91,7 +90,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       password = value;
                     },
                     decoration: kTextFieldDecoration.copyWith(
-                      hintText: 'Password',
+                      labelText: 'Password',
+                      hintText: 'Enter your password',
                       suffixIcon: GestureDetector(
                         onTap: () {
                           setState(() {
@@ -196,9 +196,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         children: [
                           Text(
                             'I don\'t have an account',
-                            style: GoogleFonts.openSansCondensed(
-                              fontWeight: FontWeight.w700,
-                            ),
                           ),
                           SizedBox(
                             width: 5.0,
@@ -206,8 +203,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           GestureDetector(
                             child: Text(
                               'Sign up',
-                              style: GoogleFonts.openSansCondensed(
+                              style: TextStyle(
                                 color: kOrangeColorInHex,
+                                fontFamily: 'Urbanist-Bold',
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -226,7 +224,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Center(
                     child: Text(
                       'or continue with',
-                      style: GoogleFonts.ubuntu(color: Colors.black54),
+                      style: TextStyle(color: Colors.black54),
                     ),
                   ),
                   SizedBox(

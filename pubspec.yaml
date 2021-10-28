@@ -24,5 +24,10 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
+  fonts:
+    - family: Urbanist
+      fonts:
+      - asset: fonts/Urbanist-Regular.ttf
+      - asset: fonts/Urbanist-Bold.ttf
   assets:
     - images/
