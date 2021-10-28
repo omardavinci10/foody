@@ -29,11 +29,11 @@ const kTextFieldDecoration = InputDecoration(
     borderRadius: BorderRadius.all(Radius.circular(10.0)),
   ),
   enabledBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: Colors.black26, width: 1.0),
+    borderSide: BorderSide(color: Colors.black12, width: 1.0),
     borderRadius: BorderRadius.all(Radius.circular(10.0)),
   ),
   focusedBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: Colors.black26, width: 2.0),
+    borderSide: BorderSide(color: Colors.black12, width: 2.0),
     borderRadius: BorderRadius.all(Radius.circular(10.0)),
   ),
 );
@@ -64,7 +64,7 @@ const kTextStyleHelpCenter = TextStyle(
   height: 2,
 );
 
-const kLightGreyColorInHex = Color(0xFFF0F0F0);
+const kLightGreyColorInHex = Colors.white;
 
 const kOrangeColorInHex = Color(0xFFF89C29);
 

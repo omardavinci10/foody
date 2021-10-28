@@ -44,15 +44,15 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       child: Image.asset('images/logo1.png'),
                     ),
                   ),
-                  SizedBox(
-                    height: 15.0,
-                  ),
-                  Text(
-                    'Sign up to continue!',
-                    style: GoogleFonts.openSansCondensed(
-                      color: Colors.black,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15.0),
+                    child: Text(
+                      'Sign up to continue!',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -100,13 +100,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: 8.0,
+                    height: 15.0,
                   ),
                   Center(
                     child: Text(
                       'Note that we will use your phone number to verify your account',
-                      style: GoogleFonts.ubuntu(
-                          color: Colors.black54, fontSize: 12.0),
+                      style: TextStyle(color: Colors.black54, fontSize: 11.0),
                     ),
                   ),
                   RoundedButton(
@@ -188,7 +187,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
+                      side: BorderSide.none,
                     ),
+                    elevation: 0.0,
                     color: kLightGreyColorInHex,
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
@@ -197,9 +198,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         children: [
                           Text(
                             'I already have an account',
-                            style: GoogleFonts.openSansCondensed(
-                              fontWeight: FontWeight.w700,
-                            ),
                           ),
                           SizedBox(
                             width: 5.0,
@@ -207,7 +205,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           GestureDetector(
                             child: Text(
                               'Login',
-                              style: GoogleFonts.openSansCondensed(
+                              style: TextStyle(
                                 color: kOrangeColorInHex,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -226,7 +224,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   Center(
                     child: Text(
                       'or continue with',
-                      style: GoogleFonts.ubuntu(color: Colors.black54),
+                      style: TextStyle(color: Colors.black54),
                     ),
                   ),
                   SizedBox(

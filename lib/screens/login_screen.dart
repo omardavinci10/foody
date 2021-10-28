@@ -51,15 +51,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Image.asset('images/logo1.png'),
                     ),
                   ),
-                  SizedBox(
-                    height: 15.0,
-                  ),
-                  Text(
-                    'Welcome Back!',
-                    style: GoogleFonts.openSansCondensed(
-                      color: Colors.black,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15.0),
+                    child: Text(
+                      'Welcome Back!',
+                      style: GoogleFonts.openSansCondensed(
+                        color: Colors.black,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -185,7 +185,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
+                      side: BorderSide.none,
                     ),
+                    elevation: 0.0,
                     color: kLightGreyColorInHex,
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
