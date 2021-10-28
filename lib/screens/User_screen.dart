@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:foody/components/profile_widgets.dart';
+import 'package:foody/components/rounded_button.dart';
 
-class ProfilePage extends StatefulWidget {
-    static const String id = 'profile_screen';
+class UserPage extends StatefulWidget {
+  static const String id = 'profile_screen';
 
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  _UserPageState createState() => _UserPageState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _UserPageState extends State<UserPage> {
   final name = TextEditingController();
   final company = TextEditingController();
   final birthDate = TextEditingController();
@@ -23,10 +24,10 @@ class _ProfilePageState extends State<ProfilePage> {
       backgroundColor: Color(0xfffafafa),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        centerTitle: true,
         elevation: 0,
+        centerTitle: true,
         iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color(0xfffafafa),
         title: new Text(
           "Profile",
           style: TextStyle(color: Colors.black),
@@ -185,36 +186,21 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(right: 15, top: 15),
+              padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
-                elevation: 5.0,
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10.0),
                 child: MaterialButton(
-                    onPressed: () {},
-                    minWidth: 200.0,
-                    height: 42.0,
-                    child: new Text(
-                      "Change Password",
-                      style: TextStyle(
-                        color: Colors.orangeAccent,
-                      ),
-                    )),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(right: 15, top: 70),
-              child: Material(
-                elevation: 5.0,
-                color: Colors.orange,
-                borderRadius: BorderRadius.circular(10.0),
-                child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    print("change password");
+                  },
                   minWidth: 200.0,
                   height: 42.0,
                   child: Text(
-                    "Save Changes",
-                    style: TextStyle(color: Colors.white),
+                    "Change Password",
+                    style: TextStyle(
+                      color: Colors.orangeAccent,
+                    ),
                   ),
                 ),
               ),
@@ -222,6 +208,15 @@ class _ProfilePageState extends State<ProfilePage> {
           ],
         ),
       ),
+      bottomNavigationBar: Padding(
+          padding: EdgeInsets.all(10),
+          child: RoundedButton(
+            title: "Save Changes",
+            color: Colors.orangeAccent,
+            onPressed: () {
+              print("Saved!");
+            },
+          )),
     );
   }
 }
