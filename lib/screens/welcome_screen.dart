@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:foody/screens/login_screen.dart';
 import 'package:foody/screens/registration_screen.dart';
-import 'package:foody/screens/profile_screen.dart';
 import 'package:foody/screens/contactus_screen.dart';
-
+import 'package:foody/screens/User_screen.dart';
 import 'package:foody/components/rounded_button.dart';
-
-import 'profile_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
@@ -67,7 +64,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 title: 'Profile Page',
                 color: Color(0xFFFCB74C),
                 onPressed: () {
-                  Navigator.pushNamed(context, ProfilePage.id);
+                  Navigator.pushNamed(context, UserPage.id);
                 },
               ),
               RoundedButton(
