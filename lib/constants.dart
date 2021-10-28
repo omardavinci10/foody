@@ -76,14 +76,15 @@ const kLightGreyColorInHex = Colors.white;
 const kOrangeColorInHex = Color(0xFFF89C29);
 
 const kAuthButtonStyle = AuthButtonStyle(
-  borderRadius: 10.0,
+  borderRadius: 5.0,
   buttonColor: Colors.white,
-  borderColor: Colors.black26,
+  borderColor: Colors.black12,
   iconSize: 20.0,
+  borderWidth: 1.0,
   padding: EdgeInsets.all(8.0),
   textStyle: TextStyle(
     fontSize: 12.0,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w600,
     color: Colors.black54,
   ),
 );
