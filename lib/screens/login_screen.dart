@@ -17,8 +17,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   bool showSpinner = false;
-  late String phone;
-  late String password;
+  String? phone;
+  String? password;
   bool _obscureText = true;
   Icon myIcon = Icon(Icons.visibility_off);
 
@@ -115,7 +115,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       setState(() {
                         showSpinner = true;
                       });
-                      if ((phone == '' || password == '')) {
+                      if ((phone == '' || password == '') ||
+                          (phone == null || password == null)) {
                         setState(() {
                           showSpinner = false;
                           Alert(

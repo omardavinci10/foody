@@ -2,6 +2,7 @@ import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 const kSendButtonTextStyle = TextStyle(
   color: Colors.lightBlueAccent,
@@ -80,6 +81,7 @@ const kAuthButtonStyle = AuthButtonStyle(
   buttonColor: Colors.white,
   borderColor: Colors.black12,
   iconSize: 20.0,
+  splashColor: Colors.grey,
   borderWidth: 1.0,
   padding: EdgeInsets.all(8.0),
   textStyle: TextStyle(
