@@ -51,7 +51,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w600,
                         fontFamily: 'Urbanist-Bold',
                       ),
                     ),
