@@ -8,6 +8,7 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:foody/components/login_buttons.dart';
+import 'SmartVillage_Screen.dart';
 import 'empty_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -114,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     title: 'Login',
                     color: kOrangeColorInHex,
                     onPressed: () async {
-                      Navigator.pushNamed(context, HomePage.id);
+                      Navigator.pushNamed(context, SmartVillageScreen.id);
                       setState(() {
                         showSpinner = true;
                       });

@@ -10,6 +10,8 @@ import 'package:foody/screens/empty_screen.dart';
 import 'package:foody/screens/track_orders.dart';
 import 'package:foody/screens/login_screen.dart';
 
+import 'Wallet_Screen.dart';
+
 class HomePage extends StatefulWidget {
   static const String id = 'Home_screen';
 
@@ -87,7 +89,13 @@ class _HomePageState extends State<HomePage> {
             ListTile(
                 title: Text("Your Wallet"),
                 leading: FaIcon(FontAwesomeIcons.wallet),
-                onTap: () {}),
+                onTap: () {
+                  setState(() {
+                    Navigator.pop(context);
+                    title = "Wallet";
+                    body = WalletScreen();
+                  });
+                }),
             ListTile(
                 title: Text("Profile"),
                 leading: FaIcon(FontAwesomeIcons.user),

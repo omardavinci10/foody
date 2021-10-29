@@ -92,7 +92,7 @@ const kAuthButtonStyle = AuthButtonStyle(
     color: Colors.black54,
   ),
 );
-var title = "";
+var title = "Menu";
 enum DrawerSections {
   menu,
   your_wallet,

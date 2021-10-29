@@ -39,7 +39,6 @@ class Foody extends StatelessWidget {
         WalletScreen.id: (context) => WalletScreen(),
         OrderScreen.id: (context) => OrderScreen(),
         TrackOrdersScreen.id: (context) => TrackOrdersScreen(),
-
         FoodDetails.id: (context) => FoodDetails(
               imagePath: 'images/Contact_us.png',
             ),

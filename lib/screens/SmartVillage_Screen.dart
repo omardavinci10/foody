@@ -5,6 +5,7 @@ import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
+import 'empty_screen.dart';
 import 'home_screen.dart';
 
 class SmartVillageScreen extends StatefulWidget {
@@ -294,9 +295,11 @@ Widget customisedBottomSheet(BuildContext context, String file) {
             Card(
               child: new InkWell(
                 onTap: () {
+                  Navigator.pushNamed(context, HomePage.id);
                   print("tapped");
                 },
                 child: Container(
+                  height: 100,
                   width: deviceSizeWidth * 0.9,
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
@@ -327,7 +330,7 @@ Widget customisedBottomSheet(BuildContext context, String file) {
                 },
                 child: Container(
                   width: deviceSizeWidth * 0.9,
-                  // height: 50.0,
+                  height: 100.0,
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: RichText(

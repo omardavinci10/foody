@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foody/screens/foodDetails_screen.dart';
 import 'package:intl/intl.dart';
 
 import '../constants.dart';
@@ -18,7 +19,14 @@ class OrderScreen extends StatefulWidget {
 }
 
 class _OrderScreenState extends State<OrderScreen> {
-  final List<Order> orderList = [Order('images/photo1.jpg', "Hello")];
+  final List<Order> orderList = [
+    Order('images/p1.jpg', "Example"),
+    Order('images/p1.jpg', "Example"),
+    Order('images/p1.jpg', "Example"),
+    Order('images/p1.jpg', "Example"),
+    Order('images/p1.jpg', "Example"),
+    Order('images/p1.jpg', "Example"),
+  ];
 
   // Color myColor = (Wallet.budget < 0) ? Colors.red : Colors.green;
 
@@ -32,7 +40,7 @@ class _OrderScreenState extends State<OrderScreen> {
         child: Column(
           children: [
             SizedBox(
-              height: 300,
+              height: 700,
               child: ListView.builder(
                   itemCount: orderList.length,
                   itemBuilder: (BuildContext context, int index) =>
@@ -52,7 +60,7 @@ class _OrderScreenState extends State<OrderScreen> {
       child: Card(
         child: new InkWell(
           onTap: () {
-            Navigator.pushNamed(context, Foo.id);
+            Navigator.pushNamed(context, FoodDetails.id);
 
             print("tapped");
           },
@@ -63,9 +71,11 @@ class _OrderScreenState extends State<OrderScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
                   child: Row(
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Expanded(
+                      Container(
+                        height: 50,
+                        width: 50,
                         child: Image.asset(
                           orderList[0].imagePath,
                           fit: BoxFit.cover,
