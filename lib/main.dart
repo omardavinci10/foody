@@ -18,7 +18,7 @@ class Foody extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'SplashScreen',
+        fontFamily: 'Urbanist',
       ),
       initialRoute: SplashScreen.id,
       routes: {
