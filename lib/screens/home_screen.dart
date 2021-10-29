@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Widget body = EmptyPage();
+  Widget body = OrderScreen();
   @override
   Widget build(BuildContext context) {
     final section;
