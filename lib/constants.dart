@@ -2,6 +2,7 @@ import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 const kSendButtonTextStyle = TextStyle(
@@ -90,3 +91,12 @@ const kAuthButtonStyle = AuthButtonStyle(
     color: Colors.black54,
   ),
 );
+var title = "";
+enum DrawerSections {
+  menu,
+  your_wallet,
+  profile,
+  track_orders,
+  notifications,
+  contact_us,
+}

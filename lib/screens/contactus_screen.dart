@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foody/components/rounded_button.dart';
+import 'package:foody/components/rounded_button2.dart';
 
 import '../constants.dart';
 
@@ -27,7 +27,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                 Center(
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
-                    child: Image.asset('images/contact.png'),
+                    child: Image.asset('images/Contact_us.png'),
                   ),
                 ),
                 Card(
@@ -78,6 +78,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                         BorderRadius.all(Radius.circular(2)),
                                   ),
                                   hintText: "Ex: AhmedMohamed@exmp.com",
+                                  hintStyle: TextStyle(color: Colors.black26),
                                   fillColor: Color(0xfff7f7f7),
                                   filled: true,
                                 ),
@@ -127,6 +128,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                         BorderRadius.all(Radius.circular(2)),
                                   ),
                                   hintText: "Enter a message here...",
+                                  hintStyle: TextStyle(color: Colors.black26),
                                   fillColor: Color(0xfff7f7f7),
                                   filled: true,
                                 ),
@@ -136,17 +138,13 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                           )
                         ],
                       ),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 60.0),
-                            child: RoundedButton(
-                              title: 'Send Message',
-                              color: kOrangeColorInHex,
-                              onPressed: () {},
-                            ),
-                          ),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.all(0),
+                        child: RoundedButton2(
+                          title: 'Send Message',
+                          color: kOrangeColorInHex,
+                          onPressed: () {},
+                        ),
                       )
                     ],
                   ),
@@ -174,7 +172,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                   style: new TextStyle(color: Colors.black)),
                               new TextSpan(
                                 text: '   +20 111 222 3333',
-                                style: TextStyle(color: Colors.grey),
+                                style: TextStyle(color: Colors.black26),
                               ),
                             ],
                           ),
@@ -205,7 +203,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                             new TextSpan(
                               text:
                                   '   Smart Village, 4th district, Building number x',
-                              style: TextStyle(color: Colors.grey),
+                              style: TextStyle(color: Colors.black26),
                             ),
                           ],
                         ),
@@ -235,8 +233,8 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                   text: '    Email address\n\n',
                                   style: new TextStyle(color: Colors.black)),
                               new TextSpan(
-                                text: '     +20 111 222 3333',
-                                style: TextStyle(color: Colors.grey),
+                                text: '     example@example.com',
+                                style: TextStyle(color: Colors.black26),
                               ),
                             ],
                           ),
