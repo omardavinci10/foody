@@ -1,12 +1,14 @@
 import 'package:foody/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:foody/components/rounded_button.dart';
+import 'package:foody/screens/home_screen.dart';
 import 'package:foody/screens/registration_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:foody/components/login_buttons.dart';
+import 'empty_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
@@ -112,6 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     title: 'Login',
                     color: kOrangeColorInHex,
                     onPressed: () async {
+                      Navigator.pushNamed(context, HomePage.id);
                       setState(() {
                         showSpinner = true;
                       });

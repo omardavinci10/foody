@@ -6,7 +6,8 @@ import 'package:foody/screens/welcome_screen.dart';
 import 'package:foody/screens/login_screen.dart';
 import 'package:foody/screens/registration_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:foody/screens/home_screen.dart';
+import 'package:foody/screens/empty_screen.dart';
 import 'package:foody/screens/User_screen.dart';
 
 void main() => runApp(Foody());
@@ -17,7 +18,7 @@ class Foody extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'Urbanist',
+        fontFamily: 'SplashScreen',
       ),
       initialRoute: SplashScreen.id,
       routes: {
@@ -27,6 +28,8 @@ class Foody extends StatelessWidget {
         RegistrationScreen.id: (context) => RegistrationScreen(),
         UserPage.id: (context) => UserPage(),
         ContactUsScreen.id: (context) => ContactUsScreen(),
+        HomePage.id: (context) => HomePage(),
+        EmptyPage.id: (context) => EmptyPage(),
       },
     );
   }

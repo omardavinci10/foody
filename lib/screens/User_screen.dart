@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:foody/components/profile_widgets.dart';
 import 'package:foody/components/rounded_button.dart';
+import 'package:foody/constants.dart';
 
 class UserPage extends StatefulWidget {
   static const String id = 'profile_screen';
@@ -23,17 +24,16 @@ class _UserPageState extends State<UserPage> {
     return Scaffold(
       backgroundColor: Color(0xfffafafa),
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        elevation: 0,
-        centerTitle: true,
-        iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Color(0xfffafafa),
-        title: new Text(
-          "Profile",
-          style: TextStyle(color: Colors.black),
-        ),
-      ),
-      drawer: Drawer(),
+      // appBar: AppBar(
+      //   elevation: 0,
+      //   centerTitle: true,
+      //   iconTheme: IconThemeData(color: Colors.black),
+      //   backgroundColor: Color(0xfffafafa),
+      //   title: new Text(
+      //     "Profile",
+      //     style: TextStyle(color: Colors.black),
+      //   ),
+      // ),
       body: Padding(
         padding: const EdgeInsets.only(left: 20.0, top: 8.0),
         child: ListView(
@@ -57,14 +57,18 @@ class _UserPageState extends State<UserPage> {
                   //    validator: validateName,
                   controller: name,
                   decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: new BorderSide(color: Colors.orange)),
+                    focusedBorder:
+                        OutlineInputBorder(borderSide: BorderSide.none),
                     filled: true,
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: new BorderSide(color: Colors.black12)),
+                    enabledBorder:
+                        OutlineInputBorder(borderSide: BorderSide.none),
                     labelText: 'Name',
+                    hintText: 'Enter your name',
+                    hintStyle: TextStyle(
+                      color: Colors.black26,
+                    ),
                     labelStyle: TextStyle(
-                      color: Colors.black54,
+                      color: Colors.black26,
                     ),
                     fillColor: Colors.white,
                   ),
@@ -79,14 +83,19 @@ class _UserPageState extends State<UserPage> {
                   //    validator: validateName,
                   controller: company,
                   decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: new BorderSide(color: Colors.orange)),
+                    focusedBorder:
+                        OutlineInputBorder(borderSide: BorderSide.none),
                     filled: true,
                     enabledBorder: OutlineInputBorder(
-                        borderSide: new BorderSide(color: Colors.black12)),
+                      borderSide: BorderSide.none,
+                    ),
                     labelText: 'Company',
+                    hintText: 'Enter you company name',
                     labelStyle: TextStyle(
-                      color: Colors.black54,
+                      color: Colors.black26,
+                    ),
+                    hintStyle: TextStyle(
+                      color: Colors.black26,
                     ),
                     fillColor: Colors.white,
                   ),
@@ -102,13 +111,19 @@ class _UserPageState extends State<UserPage> {
                   controller: birthDate,
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
-                        borderSide: new BorderSide(color: Colors.orange)),
+                      borderSide: BorderSide.none,
+                    ),
                     filled: true,
                     enabledBorder: OutlineInputBorder(
-                        borderSide: new BorderSide(color: Colors.black12)),
+                      borderSide: BorderSide.none,
+                    ),
                     labelText: 'Birthdate',
+                    hintText: 'Enter your Birthdate',
+                    hintStyle: TextStyle(
+                      color: Colors.black26,
+                    ),
                     labelStyle: TextStyle(
-                      color: Colors.black54,
+                      color: Colors.black26,
                     ),
                     fillColor: Colors.white,
                   ),
@@ -123,14 +138,18 @@ class _UserPageState extends State<UserPage> {
                   //    validator: validateName,
                   controller: gender,
                   decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: new BorderSide(color: Colors.orange)),
+                    focusedBorder:
+                        OutlineInputBorder(borderSide: BorderSide.none),
                     filled: true,
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: new BorderSide(color: Colors.black12)),
+                    enabledBorder:
+                        OutlineInputBorder(borderSide: BorderSide.none),
                     labelText: 'Gender',
+                    hintText: 'Enter your Gender',
+                    hintStyle: TextStyle(
+                      color: Colors.black26,
+                    ),
                     labelStyle: TextStyle(
-                      color: Colors.black54,
+                      color: Colors.black26,
                     ),
                     fillColor: Colors.white,
                   ),
@@ -149,14 +168,18 @@ class _UserPageState extends State<UserPage> {
                   //    validator: validateName,
                   controller: phoneNumber,
                   decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: new BorderSide(color: Colors.orange)),
+                    focusedBorder:
+                        OutlineInputBorder(borderSide: BorderSide.none),
                     filled: true,
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: new BorderSide(color: Colors.black12)),
+                    enabledBorder:
+                        OutlineInputBorder(borderSide: BorderSide.none),
                     labelText: 'Phone Number',
+                    hintText: 'Enter your Phone Number',
+                    hintStyle: TextStyle(
+                      color: Colors.black26,
+                    ),
                     labelStyle: TextStyle(
-                      color: Colors.black54,
+                      color: Colors.black26,
                     ),
                     fillColor: Colors.white,
                   ),
@@ -171,14 +194,18 @@ class _UserPageState extends State<UserPage> {
                   //    validator: validateName,
                   controller: emailAddress,
                   decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: new BorderSide(color: Colors.orange)),
+                    focusedBorder:
+                        OutlineInputBorder(borderSide: BorderSide.none),
                     filled: true,
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: new BorderSide(color: Colors.black12)),
+                    enabledBorder:
+                        OutlineInputBorder(borderSide: BorderSide.none),
                     labelText: 'Email Address',
+                    hintText: 'Enter your Email',
                     labelStyle: TextStyle(
-                      color: Colors.black54,
+                      color: Colors.black26,
+                    ),
+                    hintStyle: TextStyle(
+                      color: Colors.black26,
                     ),
                     fillColor: Colors.white,
                   ),
@@ -186,20 +213,22 @@ class _UserPageState extends State<UserPage> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
+              padding: EdgeInsets.only(top: 20, right: 10, bottom: 30),
               child: Material(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10.0),
+                color: Color(0xfffafafa),
                 child: MaterialButton(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      side: BorderSide(color: kOrangeColorInHex)),
                   onPressed: () {
                     print("change password");
                   },
                   minWidth: 200.0,
-                  height: 42.0,
+                  height: 50.0,
                   child: Text(
                     "Change Password",
                     style: TextStyle(
-                      color: Colors.orangeAccent,
+                      color: kOrangeColorInHex,
                     ),
                   ),
                 ),
@@ -212,7 +241,7 @@ class _UserPageState extends State<UserPage> {
           padding: EdgeInsets.all(10),
           child: RoundedButton(
             title: "Save Changes",
-            color: Colors.orangeAccent,
+            color: kOrangeColorInHex,
             onPressed: () {
               print("Saved!");
             },

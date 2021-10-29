@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foody/constants.dart';
+import 'package:foody/screens/login_screen.dart';
 import 'package:foody/screens/welcome_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   _navigateToWelcome() async {
     await Future.delayed(Duration(milliseconds: 3000), () {});
-    Navigator.pushNamed(context, WelcomeScreen.id);
+    Navigator.pushNamed(context, LoginScreen.id);
   }
 
   @override
