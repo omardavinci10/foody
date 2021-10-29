@@ -15,6 +15,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1+4"
+  awesome_select:
+    dependency: "direct main"
+    description:
+      name: awesome_select
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.5"
   boolean_selector:
     dependency: transitive
     description:

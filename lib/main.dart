@@ -13,6 +13,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:foody/screens/home_screen.dart';
 import 'package:foody/screens/empty_screen.dart';
 import 'package:foody/screens/User_screen.dart';
+import 'package:foody/screens/foodDetails_screen.dart';
 
 void main() => runApp(Foody());
 
@@ -24,7 +25,7 @@ class Foody extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Urbanist',
       ),
-      initialRoute: OrderScreen.id,
+      initialRoute: SplashScreen.id,
       routes: {
         SplashScreen.id: (context) => SplashScreen(),
         WelcomeScreen.id: (context) => WelcomeScreen(),
@@ -38,6 +39,12 @@ class Foody extends StatelessWidget {
         WalletScreen.id: (context) => WalletScreen(),
         OrderScreen.id: (context) => OrderScreen(),
         TrackOrdersScreen.id: (context) => TrackOrdersScreen(),
+
+        FoodDetails.id: (context) => FoodDetails(
+              imagePath: 'images/Contact_us.png',
+            ),
+        TrackOrdersScreen.id: (context) => TrackOrdersScreen(),
+        SmartVillageScreen.id: (context) => SmartVillageScreen(),
       },
     );
   }
