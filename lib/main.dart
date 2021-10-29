@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foody/screens/SmartVillage_Screen.dart';
 import 'package:foody/screens/User_screen.dart';
 import 'package:foody/screens/contactus_screen.dart';
 import 'package:foody/screens/splash_screen.dart';
@@ -22,7 +23,7 @@ class Foody extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Urbanist',
       ),
-      initialRoute: SplashScreen.id,
+      initialRoute: EmptyPage.id,
       routes: {
         SplashScreen.id: (context) => SplashScreen(),
         WelcomeScreen.id: (context) => WelcomeScreen(),
@@ -36,6 +37,7 @@ class Foody extends StatelessWidget {
               imagePath: 'images/Contact_us.png',
             ),
         TrackOrdersScreen.id: (context) => TrackOrdersScreen(),
+        SmartVillageScreen.id: (context) => SmartVillageScreen(),
       },
     );
   }
