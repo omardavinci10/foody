@@ -17,9 +17,9 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   bool showSpinner = false;
-  late String displayName;
-  late String email;
-  late String phone;
+  String? displayName;
+  String? email;
+  String? phone;
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +116,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         setState(() {
                           showSpinner = true;
                         });
-                        if (displayName == '' || email == '' || phone == '') {
+                        if ((displayName == '' || email == '' || phone == '') ||
+                            (displayName == null ||
+                                email == null ||
+                                phone == null)) {
                           setState(() {
                             showSpinner = false;
                             Alert(
