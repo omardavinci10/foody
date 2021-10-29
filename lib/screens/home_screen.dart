@@ -47,11 +47,9 @@ class _HomePageState extends State<HomePage> {
         child: new ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 20.0, top: 8),
-              child: ProfileWidget(
-                imagePath: 'images/photo1.jpg',
-                onClicked: () async {},
-              ),
+              padding: const EdgeInsets.only(right: 180.0, top: 8),
+              child: CircleAvatar(
+                  radius: 50, backgroundImage: AssetImage('images/logo1.png')),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20, top: 20, bottom: 0),
