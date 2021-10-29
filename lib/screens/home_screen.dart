@@ -118,9 +118,16 @@ class _HomePageState extends State<HomePage> {
               leading: FaIcon(FontAwesomeIcons.headset),
             ),
             _createFooterItem(
-                icon: Icons.logout,
-                text: 'Logout',
-                onTap: () => Navigator.pop(context, LoginScreen.id))
+              icon: Icons.logout,
+              text: 'Logout',
+              onTap: () {
+                setState(() {
+                  title = "Logout";
+                  Navigator.pop(context);
+                  body = LoginScreen();
+                });
+              },
+            )
           ],
         ),
       ),
