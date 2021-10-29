@@ -122,25 +122,25 @@ class _LoginScreenState extends State<LoginScreen> {
                           (phone == null || password == null)) {
                         setState(() {
                           showSpinner = false;
-                          Alert(
-                            context: context,
-                            style: alertStyle,
-                            type: AlertType.info,
-                            title: "Login error",
-                            desc: "Fill all the fields.",
-                            buttons: [
-                              DialogButton(
-                                child: Text(
-                                  "Ok",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 20),
-                                ),
-                                onPressed: () => Navigator.pop(context),
-                                color: Color.fromRGBO(0, 179, 134, 1.0),
-                                radius: BorderRadius.circular(0.0),
-                              ),
-                            ],
-                          ).show();
+                          // Alert(
+                          //   context: context,
+                          //   style: alertStyle,
+                          //   type: AlertType.info,
+                          //   title: "Login error",
+                          //   desc: "Fill all the fields.",
+                          //   buttons: [
+                          //     DialogButton(
+                          //       child: Text(
+                          //         "Ok",
+                          //         style: TextStyle(
+                          //             color: Colors.white, fontSize: 20),
+                          //       ),
+                          //       onPressed: () => Navigator.pop(context),
+                          //       color: Color.fromRGBO(0, 179, 134, 1.0),
+                          //       radius: BorderRadius.circular(0.0),
+                          //     ),
+                          //   ],
+                          // ).show();
                         });
                       } else {
                         try {
