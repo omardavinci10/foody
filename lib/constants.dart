@@ -4,6 +4,7 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:intl/intl.dart';
 
 const kSendButtonTextStyle = TextStyle(
   color: Colors.lightBlueAccent,
@@ -100,3 +101,8 @@ enum DrawerSections {
   notifications,
   contact_us,
 }
+
+const kLightTextStyle = TextStyle(
+  color: Colors.black38,
+  fontSize: 15.0,
+);

@@ -4,6 +4,7 @@ import 'package:foody/screens/User_screen.dart';
 import 'package:foody/screens/Wallet_Screen.dart';
 import 'package:foody/screens/contactus_screen.dart';
 import 'package:foody/screens/splash_screen.dart';
+import 'package:foody/screens/track_orders.dart';
 import 'package:foody/screens/welcome_screen.dart';
 import 'package:foody/screens/login_screen.dart';
 import 'package:foody/screens/registration_screen.dart';
@@ -33,7 +34,11 @@ class Foody extends StatelessWidget {
         HomePage.id: (context) => HomePage(),
         SmartVillageScreen.id: (context) => SmartVillageScreen(),
         EmptyPage.id: (context) => EmptyPage(),
+
         WalletScreen.id: (context) => WalletScreen(),
+
+        TrackOrdersScreen.id: (context) => TrackOrdersScreen(),
+
       },
     );
   }
