@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                 title: Text("Profile"),
                 leading: FaIcon(FontAwesomeIcons.user),
                 onTap: () {
-                  setState(() async {
+                  setState(() {
                     Navigator.pop(context);
                     title = "Profile";
                     body = UserPage();
