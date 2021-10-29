@@ -117,16 +117,19 @@ class _HomePageState extends State<HomePage> {
               },
               leading: FaIcon(FontAwesomeIcons.headset),
             ),
-            _createFooterItem(
-              icon: Icons.logout,
-              text: 'Logout',
-              onTap: () {
-                setState(() {
-                  title = "Logout";
-                  Navigator.pop(context);
-                  body = LoginScreen();
-                });
-              },
+            Padding(
+              padding: const EdgeInsets.only(top: 200),
+              child: _createFooterItem(
+                icon: Icons.logout,
+                text: 'Logout',
+                onTap: () {
+                  setState(() {
+                    title = "Logout";
+                    Navigator.pop(context);
+                    body = LoginScreen();
+                  });
+                },
+              ),
             )
           ],
         ),
