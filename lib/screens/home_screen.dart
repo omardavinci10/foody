@@ -7,6 +7,7 @@ import 'package:foody/screens/contactus_screen.dart';
 import 'package:foody/constants.dart';
 import 'package:foody/components/profile_widgets.dart';
 import 'package:foody/screens/empty_screen.dart';
+import 'package:foody/screens/login_screen.dart';
 
 class HomePage extends StatefulWidget {
   static const String id = 'Home_screen';
@@ -40,7 +41,42 @@ class _HomePageState extends State<HomePage> {
       drawer: Drawer(
         child: new ListView(
           children: [
-            Padding(padding: EdgeInsets.only(top: 200)),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, top: 8),
+              child: ProfileWidget(
+                imagePath: 'images/photo1.jpg',
+                onClicked: () async {},
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, top: 20, bottom: 0),
+              child: Text(
+                'Mohammed Ahmed',
+                style: TextStyle(
+                  // color: Colors.black,
+                  fontSize: 14.0,
+                  // fontFamily: 'Urbanist-Bold',
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, top: 8, bottom: 8),
+              child: Text(
+                '+20 111 222 3333',
+                style: TextStyle(
+                  color: Colors.black38,
+                  fontSize: 14.0,
+                  // fontFamily: 'Urbanist-Bold',
+                  // fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            Divider(
+              indent: 20,
+              endIndent: 20,
+            ),
+            Padding(padding: EdgeInsets.only(top: 8)),
             ListTile(
                 title: Text("Menu"),
                 leading: Icon(Icons.flip_to_front),
@@ -81,6 +117,10 @@ class _HomePageState extends State<HomePage> {
               },
               leading: FaIcon(FontAwesomeIcons.headset),
             ),
+            _createFooterItem(
+                icon: Icons.logout,
+                text: 'Logout',
+                onTap: () => Navigator.pop(context, LoginScreen.id))
           ],
         ),
       ),
@@ -89,4 +129,25 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+Widget _createFooterItem(
+    {required IconData icon,
+    required String text,
+    required GestureTapCallback onTap}) {
+  return ListTile(
+    title: Row(
+      children: <Widget>[
+        Icon(icon, color: Colors.black26),
+        Padding(
+          padding: EdgeInsets.only(left: 15.0),
+          child: Text(
+            text,
+            style: TextStyle(color: Colors.black26),
+          ),
+        )
+      ],
+    ),
+    onTap: onTap,
+  );
 }
