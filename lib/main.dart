@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foody/screens/User_screen.dart';
 import 'package:foody/screens/contactus_screen.dart';
 import 'package:foody/screens/splash_screen.dart';
+import 'package:foody/screens/track_orders.dart';
 import 'package:foody/screens/welcome_screen.dart';
 import 'package:foody/screens/login_screen.dart';
 import 'package:foody/screens/registration_screen.dart';
@@ -34,6 +35,7 @@ class Foody extends StatelessWidget {
         FoodDetails.id: (context) => FoodDetails(
               imagePath: 'images/Contact_us.png',
             ),
+        TrackOrdersScreen.id: (context) => TrackOrdersScreen(),
       },
     );
   }

@@ -7,6 +7,7 @@ import 'package:foody/screens/contactus_screen.dart';
 import 'package:foody/constants.dart';
 import 'package:foody/components/profile_widgets.dart';
 import 'package:foody/screens/empty_screen.dart';
+import 'package:foody/screens/track_orders.dart';
 import 'package:foody/screens/login_screen.dart';
 
 class HomePage extends StatefulWidget {
@@ -33,7 +34,11 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Color(0xfffafafa),
         title: new Text(
           title,
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(
+            color: Colors.black,
+            fontFamily: 'Urbanist-Bold',
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
 
@@ -101,7 +106,13 @@ class _HomePageState extends State<HomePage> {
             ListTile(
                 title: Text("Track Orders"),
                 leading: FaIcon(FontAwesomeIcons.listUl),
-                onTap: () {}),
+                onTap: () {
+                  setState(() {
+                    Navigator.pop(context);
+                    title = "My Orders";
+                    body = TrackOrdersScreen();
+                  });
+                }),
             ListTile(
                 title: Text("Notifications"),
                 leading: FaIcon(FontAwesomeIcons.bell),
