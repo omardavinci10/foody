@@ -167,8 +167,9 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                               ),
                             ),
                             new TextSpan(
-                                text: '   Phone number\n\n',
-                                style: new TextStyle(color: Colors.black)),
+                              text: '   Phone number\n\n',
+                              style: new TextStyle(color: Colors.black),
+                            ),
                             new TextSpan(
                               text: '   +20 111 222 3333',
                               style: TextStyle(color: Colors.black26),
