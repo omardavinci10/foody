@@ -134,12 +134,11 @@ class _FoodDetailsState extends State<FoodDetails> {
                     ],
                   ),
 
-                  SingleChildScrollView(
-                    physics: NeverScrollableScrollPhysics(),
-                    child: SizedBox(
-                      height: 200.0,
-                      child: SingleSelectionPage(size),
-                    ),
+                SingleChildScrollView(
+                  physics: NeverScrollableScrollPhysics(),
+                  child: SizedBox(
+                    height: 200.0,
+                    child: SingleSelectionPage(size, Colors.white),
                   ),
 
                   //  child: Column,

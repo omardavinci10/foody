@@ -106,3 +106,5 @@ const kLightTextStyle = TextStyle(
   color: Colors.black38,
   fontSize: 15.0,
 );
+
+const kLightWhiteColor = Color(0xfffafafa);

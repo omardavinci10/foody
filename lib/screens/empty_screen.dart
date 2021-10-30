@@ -6,6 +6,7 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import '../constants.dart';
+import 'foodDetails_screen.dart';
 
 class Order {
   final String imagePath;

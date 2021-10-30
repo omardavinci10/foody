@@ -9,8 +9,9 @@ class Movie {
 
 class SingleSelectionPage extends StatefulWidget {
   List<String> sortFilter;
+  Color? color;
 
-  SingleSelectionPage(this.sortFilter);
+  SingleSelectionPage(this.sortFilter, this.color);
 
   @override
   _SingleSelectionPageState createState() => _SingleSelectionPageState();
@@ -50,6 +51,7 @@ class _SingleSelectionPageState extends State<SingleSelectionPage> {
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 decoration: BoxDecoration(
+                    color: (widget.color),
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
                         color: (selected[index] == true)

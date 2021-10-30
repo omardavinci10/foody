@@ -1,4 +1,5 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:foody/components/notifications_data.dart';
 import 'package:foody/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:foody/constants.dart';
@@ -9,11 +10,15 @@ import 'package:foody/components/profile_widgets.dart';
 import 'package:foody/screens/empty_screen.dart';
 import 'package:foody/screens/track_orders.dart';
 import 'package:foody/screens/login_screen.dart';
-
+import 'package:provider/provider.dart';
 import 'Wallet_Screen.dart';
+import 'package:foody/components/order_tile.dart';
+import 'package:intl/intl.dart';
+import 'package:foody/components/my_orders_data.dart';
+import 'package:foody/screens/notifications_screen.dart';
 
 class HomePage extends StatefulWidget {
-  static const String id = 'Home_screen';
+  static const String id = 'home_screen';
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -21,9 +26,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   Widget body = OrderScreen();
+  int noOfUnreadNotifications = 0;
+
   @override
   Widget build(BuildContext context) {
     final section;
+    noOfUnreadNotifications =
+        Provider.of<MyNotificationsData>(context).getNoOfUnreadNotifications;
+    //noOfUnreadNotifications = Provider.of<MyNotificationsData>(context).getNoOfUnreadNotifications;
 
     /// You can easily control the section for example inside the initState where you check
     /// if the user logged in, or other related logic
@@ -123,8 +133,8 @@ class _HomePageState extends State<HomePage> {
                     body = UserPage();
                   });
                   /*Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => UserPage()));
-                  */
+                        MaterialPageRoute(builder: (context) => UserPage()));
+                    */
                 }),
             ListTile(
                 title: Text("Track Orders"),
@@ -139,7 +149,29 @@ class _HomePageState extends State<HomePage> {
             ListTile(
                 title: Text("Notifications"),
                 leading: FaIcon(FontAwesomeIcons.bell),
-                onTap: () {}),
+                trailing: CircleAvatar(
+                  radius: 12.0,
+                  child: Text(
+                    noOfUnreadNotifications.toString(),
+                    style: TextStyle(
+                      color: (noOfUnreadNotifications == 0)
+                          ? kLightWhiteColor
+                          : Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Urbanist-Bold',
+                    ),
+                  ),
+                  backgroundColor: (noOfUnreadNotifications == 0)
+                      ? kLightWhiteColor
+                      : kOrangeColorInHex,
+                ),
+                onTap: () {
+                  setState(() {
+                    Navigator.pop(context);
+                    title = "Notifications";
+                    body = NotificationsScreen();
+                  });
+                }),
             ListTile(
               title: Text("Contact Us"),
               onTap: () {

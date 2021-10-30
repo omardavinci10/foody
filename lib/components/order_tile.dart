@@ -50,7 +50,7 @@ class OrderTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color color = (status == 'Out to delivery') ? Colors.black : Colors.green;
+    Color color = (status == 'Delivered') ? Colors.green : Colors.black;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ListTile(
