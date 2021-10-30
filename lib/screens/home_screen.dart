@@ -1,4 +1,5 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:foody/components/notifications_data.dart';
 import 'package:foody/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:foody/constants.dart';
@@ -25,9 +26,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   Widget body = OrderScreen();
+  int noOfUnreadNotifications = 0;
+
   @override
   Widget build(BuildContext context) {
     final section;
+    //noOfUnreadNotifications = Provider.of<MyNotificationsData>(context).getNoOfUnreadNotifications;
 
     /// You can easily control the section for example inside the initState where you check
     /// if the user logged in, or other related logic
@@ -36,6 +40,9 @@ class _HomePageState extends State<HomePage> {
       providers: [
         ChangeNotifierProvider<MyOrders>(
           create: (_) => MyOrders(),
+        ),
+        ChangeNotifierProvider<MyNotificationsData>(
+          create: (_) => MyNotificationsData(),
         ),
       ],
       child: Scaffold(
@@ -135,14 +142,21 @@ class _HomePageState extends State<HomePage> {
                   leading: FaIcon(FontAwesomeIcons.bell),
                   trailing: CircleAvatar(
                     child: Text(
-                      '0',
+                      //------------------------------------------------------------------------------------------
+                      //we should use Provider.of<MyNotificationsData>(context).getNoOfUnreadNotifications
+                      //instead of noOfUnreadNotifications
+                      noOfUnreadNotifications.toString(),
                       style: TextStyle(
-                        color: kLightWhiteColor,
+                        color: (noOfUnreadNotifications == 0)
+                            ? kLightWhiteColor
+                            : Colors.white,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'Urbanist-Bold',
                       ),
                     ),
-                    backgroundColor: kLightWhiteColor,
+                    backgroundColor: (noOfUnreadNotifications == 0)
+                        ? kLightWhiteColor
+                        : kOrangeColorInHex,
                   ),
                   onTap: () {
                     setState(() {
