@@ -27,13 +27,19 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
         height: double.infinity,
         width: double.infinity,
         color: kOrangeColorInHex,
-        child: Center(
-          child: FloatingActionButton(
-            onPressed: () =>
-                Provider.of<MyNotificationsData>(context, listen: false)
+        child: Column(
+          children: [
+            Text(Provider.of<MyNotificationsData>(context)
+                .getNoOfUnreadNotifications
+                .toString()),
+            Center(
+              child: FloatingActionButton(
+                onPressed: () => Provider.of<MyNotificationsData>(context)
                     .addNotification(1827),
-            child: Icon(Icons.plus_one_rounded),
-          ),
+                child: Icon(Icons.plus_one_rounded),
+              ),
+            ),
+          ],
         ),
       ),
     );

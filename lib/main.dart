@@ -18,17 +18,49 @@ import 'package:foody/screens/home_screen.dart';
 import 'package:foody/screens/empty_screen.dart';
 import 'package:foody/screens/User_screen.dart';
 import 'package:foody/screens/foodDetails_screen.dart';
+import 'package:provider/provider.dart';
+import 'components/my_orders_data.dart';
+import 'components/notifications_data.dart';
 
 void main() => runApp(Foody());
 
 class Foody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: 'Urbanist',
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<MyOrders>(
+          create: (_) => MyOrders(),
+        ),
+        ChangeNotifierProvider<MyNotificationsData>(
+          create: (_) => MyNotificationsData(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          fontFamily: 'Urbanist',
+        ),
+        initialRoute: SplashScreen.id,
+        routes: {
+          SplashScreen.id: (context) => SplashScreen(),
+          WelcomeScreen.id: (context) => WelcomeScreen(),
+          LoginScreen.id: (context) => LoginScreen(),
+          RegistrationScreen.id: (context) => RegistrationScreen(),
+          UserPage.id: (context) => UserPage(),
+          ContactUsScreen.id: (context) => ContactUsScreen(),
+          HomePage.id: (context) => HomePage(),
+          SmartVillageScreen.id: (context) => SmartVillageScreen(),
+          // EmptyPage.id: (context) => EmptyPage(),
+          WalletScreen.id: (context) => WalletScreen(),
+          OrderScreen.id: (context) => OrderScreen(),
+          TrackOrdersScreen.id: (context) => TrackOrdersScreen(),
+          FoodDetails.id: (context) =>
+              FoodDetails(imagePath: 'images/Contact_us.png'),
+          NotificationsScreen.id: (context) => NotificationsScreen(),
+        },
       ),
+
       initialRoute: RatingScreen.id,
       routes: {
         SplashScreen.id: (context) => SplashScreen(),

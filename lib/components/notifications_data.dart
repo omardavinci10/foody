@@ -6,28 +6,28 @@ import 'package:foody/components/my_orders_data.dart';
 
 class MyNotificationsData extends ChangeNotifier {
   int _noOfUnreadNotifications = 0;
-  Map<int, bool> _ordersIDs = {};
+  Map<int, String> _ordersIDs = {};
 
   void setOrders(OrderTile currentOrder, List<OrderTile> previousOrders) {
-    _ordersIDs[currentOrder.orderID] = false;
+    _ordersIDs[currentOrder.orderID] = 'U';
     for (int i = 0; i < previousOrders.length; i++) {
-      _ordersIDs[previousOrders[i].orderID] = false;
+      _ordersIDs[previousOrders[i].orderID] = 'U';
     }
   }
 
   void addNotification(int orderID) {
     if (_ordersIDs.containsKey(orderID)) {
-      if (_ordersIDs[orderID] == false) {
+      if (_ordersIDs[orderID] == 'U') {
         _noOfUnreadNotifications++;
-        _ordersIDs[orderID] = true;
+        _ordersIDs.update(orderID, (value) => 'R');
         notifyListeners();
       }
     }
   }
 
   void removeNotification(int orderID) {
-    if (_ordersIDs.containsKey(orderID)) {
-      if (_ordersIDs[orderID] == true) {
+    if (_ordersIDs.containsKey(orderID) == true) {
+      if (_ordersIDs[orderID] == 'R') {
         _noOfUnreadNotifications--;
         _ordersIDs.remove(orderID);
         notifyListeners();
