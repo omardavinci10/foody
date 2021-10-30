@@ -4,6 +4,7 @@ import 'package:foody/screens/SmartVillage_Screen.dart';
 import 'package:foody/screens/User_screen.dart';
 import 'package:foody/screens/Wallet_Screen.dart';
 import 'package:foody/screens/contactus_screen.dart';
+import 'package:foody/screens/search_screen.dart';
 import 'package:foody/screens/splash_screen.dart';
 import 'package:foody/screens/track_orders.dart';
 import 'package:foody/screens/welcome_screen.dart';
@@ -25,7 +26,7 @@ class Foody extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Urbanist',
       ),
-      initialRoute: SplashScreen.id,
+      initialRoute: SearchPage.id,
       routes: {
         SplashScreen.id: (context) => SplashScreen(),
         WelcomeScreen.id: (context) => WelcomeScreen(),
@@ -44,6 +45,7 @@ class Foody extends StatelessWidget {
             ),
         TrackOrdersScreen.id: (context) => TrackOrdersScreen(),
         SmartVillageScreen.id: (context) => SmartVillageScreen(),
+        SearchPage.id: (context) => SearchPage(),
       },
     );
   }

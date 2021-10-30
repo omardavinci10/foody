@@ -26,6 +26,8 @@ class _SingleSelectionPageState extends State<SingleSelectionPage> {
     selectedValue = widget.sortFilter.first;
   }
 
+  var selected = [false, false, false];
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -35,8 +37,11 @@ class _SingleSelectionPageState extends State<SingleSelectionPage> {
         return GestureDetector(
           behavior: HitTestBehavior.opaque,
           onTap: () {
-            selectedValue = widget.sortFilter[index];
-            setState(() {});
+            setState(() {
+              selectedValue = widget.sortFilter[index];
+              toggle(index);
+              selected[index] = true;
+            });
           },
           child: Container(
             color:
@@ -46,16 +51,21 @@ class _SingleSelectionPageState extends State<SingleSelectionPage> {
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: Colors.black26)),
+                    border: Border.all(
+                        color: (selected[index] == true)
+                            ? Colors.orangeAccent
+                            : Colors.black26)),
                 child: Row(
                   children: <Widget>[
                     Radio(
-                        fillColor: MaterialStateColor.resolveWith(
-                            (states) => Colors.orangeAccent),
+                        fillColor: MaterialStateColor.resolveWith((states) =>
+                            (selected[index] == true)
+                                ? Colors.orangeAccent
+                                : Colors.black26),
                         value: widget.sortFilter[index],
                         groupValue: selectedValue,
                         onChanged: (s) {
-                          selectedValue = s.toString();
+                          print(s);
                           setState(() {});
                         }),
                     Text(widget.sortFilter[index])
@@ -68,6 +78,12 @@ class _SingleSelectionPageState extends State<SingleSelectionPage> {
       },
       itemCount: widget.sortFilter.length,
     );
+  }
+
+  void toggle(pos) {
+    for (var i = 0; i < selected.length; i++) {
+      if (i != pos) selected[i] = false;
+    }
   }
 }
 
