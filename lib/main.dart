@@ -58,35 +58,11 @@ class Foody extends StatelessWidget {
           FoodDetails.id: (context) =>
               FoodDetails(imagePath: 'images/Contact_us.png'),
           NotificationsScreen.id: (context) => NotificationsScreen(),
+          BasketScreen.id: (context) => BasketScreen(),
+          CheckoutScreen.id: (context) => CheckoutScreen(),
+          RatingScreen.id: (context) => RatingScreen(),
         },
       ),
-
-      initialRoute: RatingScreen.id,
-      routes: {
-        SplashScreen.id: (context) => SplashScreen(),
-        WelcomeScreen.id: (context) => WelcomeScreen(),
-        LoginScreen.id: (context) => LoginScreen(),
-        RegistrationScreen.id: (context) => RegistrationScreen(),
-        UserPage.id: (context) => UserPage(),
-        ContactUsScreen.id: (context) => ContactUsScreen(),
-        HomePage.id: (context) => HomePage(),
-        SmartVillageScreen.id: (context) => SmartVillageScreen(),
-        // EmptyPage.id: (context) => EmptyPage(),
-        WalletScreen.id: (context) => WalletScreen(),
-        OrderScreen.id: (context) => OrderScreen(),
-        TrackOrdersScreen.id: (context) => TrackOrdersScreen(),
-
-        BasketScreen.id: (context) => BasketScreen(),
-        CheckoutScreen.id: (context) => CheckoutScreen(),
-        RatingScreen.id: (context) => RatingScreen(),
-        FoodDetails.id: (context) => FoodDetails(
-              imagePath: 'images/Contact_us.png',
-            ),
-
-        FoodDetails.id: (context) =>
-            FoodDetails(imagePath: 'images/Contact_us.png'),
-        NotificationsScreen.id: (context) => NotificationsScreen(),
-      },
     );
   }
 }

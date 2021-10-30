@@ -34,8 +34,9 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 .toString()),
             Center(
               child: FloatingActionButton(
-                onPressed: () => Provider.of<MyNotificationsData>(context)
-                    .addNotification(1827),
+                onPressed: () =>
+                    Provider.of<MyNotificationsData>(context, listen: false)
+                        .addNotification(1827),
                 child: Icon(Icons.plus_one_rounded),
               ),
             ),
