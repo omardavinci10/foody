@@ -5,10 +5,11 @@ import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
+import 'empty_screen.dart';
 import 'home_screen.dart';
 
 class SmartVillageScreen extends StatefulWidget {
-  static const String id = 'smartvillage_screen';
+  static const String id = 'smart_village_screen';
 
   @override
   _SmartVillageScreenState createState() => _SmartVillageScreenState();
@@ -270,7 +271,7 @@ Widget customisedBottomSheet(BuildContext context) {
   double deviceSizeHeight = MediaQuery.of(context).size.height;
   double deviceSizeWidth = MediaQuery.of(context).size.width;
   return Container(
-    height: deviceSizeHeight * .35,
+    height: deviceSizeHeight * 0.35,
     width: deviceSizeWidth,
 //margin: EdgeInsets.only(left: 20,right: 20,top: 20,bottom: 40),
     child: Column(
@@ -293,9 +294,11 @@ Widget customisedBottomSheet(BuildContext context) {
             Card(
               child: new InkWell(
                 onTap: () {
+                  Navigator.pushNamed(context, HomePage.id);
                   print("tapped");
                 },
                 child: Container(
+                  height: 100,
                   width: deviceSizeWidth * 0.9,
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
@@ -326,7 +329,7 @@ Widget customisedBottomSheet(BuildContext context) {
                 },
                 child: Container(
                   width: deviceSizeWidth * 0.9,
-                  // height: 50.0,
+                  height: 100.0,
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: RichText(
