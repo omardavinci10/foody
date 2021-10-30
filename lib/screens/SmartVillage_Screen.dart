@@ -9,7 +9,7 @@ import 'empty_screen.dart';
 import 'home_screen.dart';
 
 class SmartVillageScreen extends StatefulWidget {
-  static const String id = 'smartvillage_screen';
+  static const String id = 'smart_village_screen';
 
   @override
   _SmartVillageScreenState createState() => _SmartVillageScreenState();
@@ -272,7 +272,7 @@ Widget customisedBottomSheet(BuildContext context, String file) {
   double deviceSizeHeight = MediaQuery.of(context).size.height;
   double deviceSizeWidth = MediaQuery.of(context).size.width;
   return Container(
-    height: deviceSizeHeight * .35,
+    height: deviceSizeHeight * 0.35,
     width: deviceSizeWidth,
 //margin: EdgeInsets.only(left: 20,right: 20,top: 20,bottom: 40),
     child: Column(

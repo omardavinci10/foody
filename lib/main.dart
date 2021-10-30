@@ -4,6 +4,7 @@ import 'package:foody/screens/SmartVillage_Screen.dart';
 import 'package:foody/screens/User_screen.dart';
 import 'package:foody/screens/Wallet_Screen.dart';
 import 'package:foody/screens/contactus_screen.dart';
+import 'package:foody/screens/notifications_screen.dart';
 import 'package:foody/screens/splash_screen.dart';
 import 'package:foody/screens/track_orders.dart';
 import 'package:foody/screens/welcome_screen.dart';
@@ -39,11 +40,9 @@ class Foody extends StatelessWidget {
         WalletScreen.id: (context) => WalletScreen(),
         OrderScreen.id: (context) => OrderScreen(),
         TrackOrdersScreen.id: (context) => TrackOrdersScreen(),
-        FoodDetails.id: (context) => FoodDetails(
-              imagePath: 'images/Contact_us.png',
-            ),
-        TrackOrdersScreen.id: (context) => TrackOrdersScreen(),
-        SmartVillageScreen.id: (context) => SmartVillageScreen(),
+        FoodDetails.id: (context) =>
+            FoodDetails(imagePath: 'images/Contact_us.png'),
+        NotificationsScreen.id: (context) => NotificationsScreen(),
       },
     );
   }

@@ -12,7 +12,7 @@ class Order {
 }
 
 class OrderScreen extends StatefulWidget {
-  static const String id = 'wallet_screen';
+  static const String id = 'empty_screen';
 
   @override
   _OrderScreenState createState() => _OrderScreenState();
@@ -40,7 +40,7 @@ class _OrderScreenState extends State<OrderScreen> {
         child: Column(
           children: [
             SizedBox(
-              height: 700,
+              height: 500,
               child: ListView.builder(
                   itemCount: orderList.length,
                   itemBuilder: (BuildContext context, int index) =>
