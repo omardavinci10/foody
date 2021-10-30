@@ -140,7 +140,7 @@ class _FoodDetailsState extends State<FoodDetails> {
                   physics: NeverScrollableScrollPhysics(),
                   child: SizedBox(
                     height: 200.0,
-                    child: SingleSelectionPage(size),
+                    child: SingleSelectionPage(size, Colors.white),
                   ),
                 ),
 

@@ -227,8 +227,7 @@ class _SmartVillageScreenState extends State<SmartVillageScreen> {
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     context: context,
-                    builder: ((builder) =>
-                        customisedBottomSheet(context, "cover")));
+                    builder: ((builder) => customisedBottomSheet(context)));
               },
             )),
       ),
@@ -267,7 +266,7 @@ Widget buildingCard(BuildContext context, int index) {
   );
 }
 
-Widget customisedBottomSheet(BuildContext context, String file) {
+Widget customisedBottomSheet(BuildContext context) {
   double deviceSizeHeight = MediaQuery.of(context).size.height;
   double deviceSizeWidth = MediaQuery.of(context).size.width;
   return Container(

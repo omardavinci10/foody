@@ -2,23 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../constants.dart';
+import 'foodDetails_screen.dart';
 
 class Order {
   final String imagePath;
+  final String title;
   final String desciprion;
 
-  Order(this.imagePath, this.desciprion);
+  Order(this.imagePath, this.title, this.desciprion);
 }
 
 class OrderScreen extends StatefulWidget {
-  static const String id = 'wallet_screen';
+  static const String id = 'order_screen';
 
   @override
   _OrderScreenState createState() => _OrderScreenState();
 }
 
 class _OrderScreenState extends State<OrderScreen> {
-  final List<Order> orderList = [Order('images/photo1.jpg', "Hello")];
+  final List<Order> orderList = [
+    Order('images/photo1.jpg', "Mini Sandwich", "Lorem Ipsum is  "),
+    Order('images/photo1.jpg', "Mini Sandwich", "Lorem Ipsum is  "),
+    Order('images/photo1.jpg', "Mini Sandwich", "Lorem Ipsum is  "),
+    Order('images/photo1.jpg', "Mini Sandwich", "Lorem Ipsum is  "),
+    Order('images/photo1.jpg', "Mini Sandwich", "Lorem Ipsum is  "),
+    Order('images/photo1.jpg', "Mini Sandwich", "Lorem Ipsum is  "),
+  ];
 
   // Color myColor = (Wallet.budget < 0) ? Colors.red : Colors.green;
 
@@ -32,7 +41,7 @@ class _OrderScreenState extends State<OrderScreen> {
         child: Column(
           children: [
             SizedBox(
-              height: 300,
+              height: deviceSizeHeight,
               child: ListView.builder(
                   itemCount: orderList.length,
                   itemBuilder: (BuildContext context, int index) =>
@@ -52,7 +61,7 @@ class _OrderScreenState extends State<OrderScreen> {
       child: Card(
         child: new InkWell(
           onTap: () {
-            Navigator.pushNamed(context, Foo.id);
+            Navigator.pushNamed(context, FoodDetails.id);
 
             print("tapped");
           },
@@ -63,18 +72,42 @@ class _OrderScreenState extends State<OrderScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
                   child: Row(
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Expanded(
-                        child: Image.asset(
-                          orderList[0].imagePath,
-                          fit: BoxFit.cover,
-                        ),
+                      Column(
+                        children: [
+                          Container(
+                            height: 50,
+                            width: 50,
+                            child: Image.asset(
+                              orderList[index].imagePath,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ],
                       ),
+
                       // Spacer(),
                       // Spacer(),
-                      Text(
-                        orderList[0].desciprion,
+                      Padding(
+                        padding: const EdgeInsets.only(left: 18.0),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  orderList[index].title,
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  orderList[index].desciprion,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                       // Spacer(),
                     ],
