@@ -22,6 +22,9 @@ class Ratings {
 class RatingScreen extends StatefulWidget {
   static const String id = 'rating_screen';
 
+  final int orderID = -1;
+  RatingScreen({orderID = -1});
+
   @override
   _RatingScreenState createState() => _RatingScreenState();
 }

@@ -18,7 +18,7 @@ class Order {
 }
 
 class OrderScreen extends StatefulWidget {
-  static const String id = 'wallet_screen';
+  static const String id = 'empty_screen';
   @override
   _OrderScreenState createState() => _OrderScreenState();
 }

@@ -10,6 +10,7 @@ import 'package:foody/screens/search_screen.dart';
 import 'package:foody/screens/notifications_screen.dart';
 import 'package:foody/screens/splash_screen.dart';
 import 'package:foody/screens/track_orders.dart';
+import 'package:foody/screens/tracking_screen.dart';
 import 'package:foody/screens/welcome_screen.dart';
 import 'package:foody/screens/login_screen.dart';
 import 'package:foody/screens/registration_screen.dart';
@@ -64,6 +65,7 @@ class Foody extends StatelessWidget {
           RatingScreen.id: (context) => RatingScreen(),
 
           SearchPage.id: (context) => SearchPage(),
+          TrackingScreen.id: (context) => TrackingScreen(),
         },
       ),
     );
