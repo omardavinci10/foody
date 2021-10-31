@@ -13,7 +13,7 @@ class LoginButtons extends StatelessWidget {
     mySocials.add(
       Expanded(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: AppleAuthButton(
             text: 'Apple',
             style: kAuthButtonStyle,
@@ -26,7 +26,7 @@ class LoginButtons extends StatelessWidget {
     mySocials.add(
       Expanded(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: GoogleAuthButton(
             text: 'Google',
             style: kAuthButtonStyle,
@@ -39,7 +39,7 @@ class LoginButtons extends StatelessWidget {
     mySocials.add(
       Expanded(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: FacebookAuthButton(
             text: 'Facebook',
             style: kAuthButtonStyle,
