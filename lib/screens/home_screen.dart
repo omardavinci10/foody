@@ -40,6 +40,18 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          (title == "Menu")
+              ? IconButton(
+                  onPressed: () {
+                    print("aywaa");
+                  },
+                  icon: Icon(
+                    Icons.search,
+                    color: Colors.black,
+                  ))
+              : Container(),
+        ],
         elevation: 0,
         centerTitle: true,
         iconTheme: IconThemeData(color: Colors.black),
@@ -54,7 +66,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
 
-      /// Display the drawer for logged in users only
+      /// Drawer/////////////////////////////////////
       drawer: Drawer(
         child: new ListView(
           children: [
@@ -95,7 +107,12 @@ class _HomePageState extends State<HomePage> {
             ListTile(
                 title: Text("Menu"),
                 leading: Icon(Icons.flip_to_front),
-                onTap: () {}),
+                onTap: () {
+                  setState(() {
+                    title = "Menu";
+                    body = OrderScreen();
+                  });
+                }),
             ListTile(
                 title: Text("Your Wallet"),
                 leading: FaIcon(FontAwesomeIcons.wallet),
