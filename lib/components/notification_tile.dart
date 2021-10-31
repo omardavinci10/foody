@@ -45,7 +45,7 @@ String actionText(String orderOrPromo, OrderTile currentOrderTile) {
 }
 
 class NotificationTile extends StatelessWidget {
-  final DateTime myTime;
+  final String myTime;
   final String orderOrPromo;
   final OrderTile currentOrder;
   final String promoCode;
@@ -95,10 +95,7 @@ class NotificationTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ListTile(
-        onTap: () {
-          Provider.of<MyNotificationsData>(context)
-              .removeNotification(currentOrder.orderID);
-        },
+        onTap: () {},
         tileColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(5.0)),
@@ -120,7 +117,7 @@ class NotificationTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                DateFormat.jm().format(myTime),
+                myTime,
                 style: kLightTextStyle.copyWith(
                   fontSize: 15.0,
                   fontWeight: FontWeight.w400,

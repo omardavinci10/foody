@@ -8,6 +8,7 @@ import 'package:foody/screens/contactus_screen.dart';
 import 'package:foody/constants.dart';
 import 'package:foody/components/profile_widgets.dart';
 import 'package:foody/screens/empty_screen.dart';
+import 'package:foody/screens/search_screen.dart';
 import 'package:foody/screens/track_orders.dart';
 import 'package:foody/screens/login_screen.dart';
 import 'package:provider/provider.dart';
@@ -44,6 +45,7 @@ class _HomePageState extends State<HomePage> {
           (title == "Menu")
               ? IconButton(
                   onPressed: () {
+                    Navigator.pushNamed(context, SearchPage.id);
                     print("aywaa");
                   },
                   icon: Icon(

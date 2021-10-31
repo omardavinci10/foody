@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:foody/components/rounded_button.dart';
+import 'package:foody/screens/home_screen.dart';
 import 'package:intl/intl.dart';
 
 import '../constants.dart';
+import 'Checkout.dart';
 
 double sum = 0;
 
@@ -247,7 +249,10 @@ class _BasketScreenState extends State<BasketScreen> {
                       side: BorderSide(color: kOrangeColorInHex, width: 01),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, HomePage.id, (route) => false);
+                    },
                     hoverColor: Colors.black,
                     minWidth: deviceSizeWidth * .45,
                     // minWidth: 200.0,
@@ -267,7 +272,9 @@ class _BasketScreenState extends State<BasketScreen> {
                   color: kOrangeColorInHex,
                   borderRadius: BorderRadius.circular(10.0),
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, CheckoutScreen.id);
+                    },
                     hoverColor: Colors.black,
                     minWidth: deviceSizeWidth * .45,
                     height: 42.0,
