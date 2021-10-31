@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foody/constants.dart';
+import 'package:foody/screens/rating_screen.dart';
 import 'package:intl/intl.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -55,36 +56,43 @@ class OrderTile extends StatelessWidget {
     Color color = (status == 'Delivered') ? Colors.green : Colors.black;
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: ListTile(
-        tileColor: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(5.0)),
-          side: BorderSide(
-              width: 0.5, color: Colors.black12, style: BorderStyle.solid),
-        ),
-        title: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Order ID: #' + orderID.toString(),
-                style: TextStyle(
-                  fontSize: 15.0,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: 'Urbanist-Bold',
+      child: GestureDetector(
+        onTap: () {
+          if ((status == 'Delivered')) {
+            Navigator.pushNamed(context, RatingScreen.id);
+          }
+        },
+        child: ListTile(
+          tileColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(5.0)),
+            side: BorderSide(
+                width: 0.5, color: Colors.black12, style: BorderStyle.solid),
+          ),
+          title: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Order ID: #' + orderID.toString(),
+                  style: TextStyle(
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Urbanist-Bold',
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 5.0, bottom: 8.0),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 8.0),
-                      child: FaIcon(
-                        FontAwesomeIcons.wallet,
-                        size: 12.0,
-                        color: Colors.grey.shade400,
+                Padding(
+                  padding: const EdgeInsets.only(top: 5.0, bottom: 8.0),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: FaIcon(
+                          FontAwesomeIcons.wallet,
+                          size: 12.0,
+                          color: Colors.grey.shade400,
+                        ),
                       ),
                     ),
                     Text(
@@ -95,50 +103,24 @@ class OrderTile extends StatelessWidget {
                         fontSize: 15.0,
                         color: kOrangeColorInHex,
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              Divider(
-                color: Colors.black38,
-                thickness: 0.6,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Status',
-                          style: kLightTextStyle.copyWith(
-                            fontSize: 12.0,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 5.0,
-                        ),
-                        Text(
-                          status,
-                          style: TextStyle(
-                            fontSize: 12.0,
-                            fontFamily: 'Urbanist-Bold',
-                            fontWeight: FontWeight.w600,
-                            color: color,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 80.0),
-                      child: Column(
+                Divider(
+                  color: Colors.black38,
+                  thickness: 0.6,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Date',
+                            'Status',
                             style: kLightTextStyle.copyWith(
                               fontSize: 12.0,
                             ),
@@ -147,20 +129,46 @@ class OrderTile extends StatelessWidget {
                             height: 5.0,
                           ),
                           Text(
-                            date,
+                            status,
                             style: TextStyle(
                               fontSize: 12.0,
                               fontFamily: 'Urbanist-Bold',
-                              fontWeight: FontWeight.w400,
+                              fontWeight: FontWeight.w600,
+                              color: color,
                             ),
                           ),
                         ],
                       ),
-                    ),
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.only(right: 80.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Date',
+                              style: kLightTextStyle.copyWith(
+                                fontSize: 12.0,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5.0,
+                            ),
+                            Text(
+                              date,
+                              style: TextStyle(
+                                fontSize: 12.0,
+                                fontFamily: 'Urbanist-Bold',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

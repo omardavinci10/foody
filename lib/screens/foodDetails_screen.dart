@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:awesome_select/awesome_select.dart';
 import 'package:foody/components/rounded_button.dart';
 import 'package:foody/constants.dart';
+import 'package:foody/screens/Basket_screen.dart';
 import 'package:foody/screens/single_multi_screen.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 
@@ -250,7 +251,9 @@ class _FoodDetailsState extends State<FoodDetails> {
                 color: Colors.orangeAccent,
                 borderRadius: BorderRadius.circular(10.0),
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, BasketScreen.id);
+                  },
                   hoverColor: Colors.black,
                   minWidth: 200.0,
                   height: 42.0,

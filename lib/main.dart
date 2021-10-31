@@ -63,6 +63,8 @@ class Foody extends StatelessWidget {
           BasketScreen.id: (context) => BasketScreen(),
           CheckoutScreen.id: (context) => CheckoutScreen(),
           RatingScreen.id: (context) => RatingScreen(),
+
+          SearchPage.id: (context) => SearchPage(),
           TrackingScreen.id: (context) => TrackingScreen(),
         },
       ),
