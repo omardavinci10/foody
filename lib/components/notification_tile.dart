@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:foody/components/notifications_data.dart';
 import 'package:foody/constants.dart';
+import 'package:foody/screens/YourOrder_Screen.dart';
 import 'package:foody/screens/rating_screen.dart';
 import 'package:intl/intl.dart';
 import 'package:foody/components/order_tile.dart';
@@ -78,7 +79,7 @@ class NotificationTile extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => TrackingScreen(
+            builder: (context) => YourOrderScreen(
               orderID: currentOrder.orderID,
             ),
           ),
