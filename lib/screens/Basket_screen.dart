@@ -6,8 +6,6 @@ import 'package:intl/intl.dart';
 import '../constants.dart';
 import 'Checkout.dart';
 
-double sum = 0;
-
 class Basket {
   final String imagePath;
   final String title;
@@ -15,6 +13,8 @@ class Basket {
 
   Basket(this.imagePath, this.title, this.budget);
 }
+
+double sum = 0;
 
 class BasketScreen extends StatefulWidget {
   static const String id = 'basket_screen';
@@ -29,8 +29,6 @@ class _BasketScreenState extends State<BasketScreen> {
     Basket('images/photo1.jpg', "Burger", 60),
     Basket('images/photo1.jpg', "Mini Sandwich", 120),
   ];
-
-  // Color myColor = (Wallet.budget < 0) ? Colors.red : Colors.green;
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +68,7 @@ class _BasketScreenState extends State<BasketScreen> {
                             "Have a promo code?",
                             style: TextStyle(
                               // color: Colors.black38,
-                              fontSize: 14.0,
+                              fontSize: deviceSizeHeight * .017,
                               // fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -79,13 +77,21 @@ class _BasketScreenState extends State<BasketScreen> {
                           TextButton(
                             onPressed: () {
                               showModalBottomSheet(
+                                  isScrollControlled: true,
+
                                   // backgroundColor: Color(0xfffafafa),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
                                   context: context,
-                                  builder: ((builder) =>
-                                      customisedBottomSheet(context)));
+                                  builder: ((builder) => SingleChildScrollView(
+                                          child: Padding(
+                                        padding: EdgeInsets.only(
+                                            bottom: MediaQuery.of(context)
+                                                .viewInsets
+                                                .bottom),
+                                        child: customisedBottomSheet(context),
+                                      ))));
                             },
                             child: Text(
                               "Add promo code",
@@ -116,7 +122,7 @@ class _BasketScreenState extends State<BasketScreen> {
                                   text: TextSpan(
                                     text: 'Payment Summary\n',
                                     style: new TextStyle(
-                                        fontSize: 20,
+                                        fontSize: deviceSizeHeight * .022,
                                         fontFamily: 'Urbanist-Bold',
                                         fontWeight: FontWeight.w600,
                                         color: Colors.black),
@@ -136,7 +142,7 @@ class _BasketScreenState extends State<BasketScreen> {
                                 "Subtotal",
                                 style: TextStyle(
                                   color: Colors.black38,
-                                  fontSize: 14.0,
+                                  fontSize: deviceSizeHeight * .017,
                                   fontFamily: 'Urbanist-Bold',
                                 ),
                               ),
@@ -160,7 +166,7 @@ class _BasketScreenState extends State<BasketScreen> {
                                 "Delivery fee",
                                 style: TextStyle(
                                   color: Colors.black38,
-                                  fontSize: 14.0,
+                                  fontSize: deviceSizeHeight * .017,
                                   fontFamily: 'Urbanist-Bold',
                                 ),
                               ),
@@ -184,7 +190,7 @@ class _BasketScreenState extends State<BasketScreen> {
                                 "Discount",
                                 style: TextStyle(
                                   color: Colors.black38,
-                                  fontSize: 14.0,
+                                  fontSize: deviceSizeHeight * .017,
                                   fontFamily: 'Urbanist-Bold',
                                 ),
                               ),
@@ -209,7 +215,7 @@ class _BasketScreenState extends State<BasketScreen> {
                                 "Total amount",
                                 style: TextStyle(
                                   // color: Colors.black38,
-                                  fontSize: 14.0,
+                                  fontSize: deviceSizeHeight * .017,
                                   fontFamily: 'Urbanist-Bold',
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -293,6 +299,8 @@ class _BasketScreenState extends State<BasketScreen> {
   }
 
   Widget buildTripCard(BuildContext context, int index) {
+    double deviceSizeHeight = MediaQuery.of(context).size.height;
+    double deviceSizeWidth = MediaQuery.of(context).size.width;
     final basket = basketList[index];
     sum += basket.budget;
     print(sum);
@@ -313,7 +321,7 @@ class _BasketScreenState extends State<BasketScreen> {
                         basket.title,
                         style: TextStyle(
                           color: Colors.black38,
-                          fontSize: 14.0,
+                          fontSize: deviceSizeHeight * .017,
                           fontFamily: 'Urbanist-Bold',
                         ),
                       ),
@@ -324,7 +332,7 @@ class _BasketScreenState extends State<BasketScreen> {
                         style: TextStyle(
                           color:
                               (basket.budget < 0) ? Colors.red : Colors.green,
-                          fontSize: 14.0,
+                          fontSize: deviceSizeHeight * .017,
                         ),
                       ),
                       // Spacer(),
@@ -358,7 +366,7 @@ Widget customisedBottomSheet(BuildContext context) {
                 "Add Promo Code",
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 20.0,
+                  fontSize: deviceSizeHeight * .022,
                   fontFamily: 'Urbanist-Bold',
                   fontWeight: FontWeight.w600,
                 ),
@@ -399,7 +407,7 @@ Widget customisedBottomSheet(BuildContext context) {
               child: Text("Or use",
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 20.0,
+                    fontSize: deviceSizeHeight * .022,
                     fontFamily: 'Urbanist-Bold',
                     fontWeight: FontWeight.w600,
                   )),

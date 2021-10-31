@@ -76,6 +76,8 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double deviceSizeHeight = MediaQuery.of(context).size.height;
+    double deviceSizeWidth = MediaQuery.of(context).size.width;
     fillOrders(context);
     fillPromoCodes(context);
     makeNotificationsTiles(context);
@@ -93,7 +95,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               Text(
                 'Just now',
                 style: kLightTextStyle.copyWith(
-                  fontSize: 14.0,
+                  fontSize: deviceSizeHeight * .017,
                 ),
               ),
               NotificationTile(
@@ -104,7 +106,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               Text(
                 'Today',
                 style: kLightTextStyle.copyWith(
-                  fontSize: 14.0,
+                  fontSize: deviceSizeHeight * .017,
                 ),
               ),
               ListView(
@@ -116,7 +118,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               Text(
                 'Recently',
                 style: kLightTextStyle.copyWith(
-                  fontSize: 14.0,
+                  fontSize: deviceSizeHeight * .017,
                 ),
               ),
               ListView(

@@ -63,7 +63,7 @@ class _RatingScreenState extends State<RatingScreen> {
                                 text: TextSpan(
                                   text: ' What do you think about ...',
                                   style: new TextStyle(
-                                      fontSize: 20,
+                                      fontSize: deviceSizeHeight * .022,
                                       fontFamily: 'Urbanist-Bold',
                                       fontWeight: FontWeight.w600,
                                       color: Colors.black),
@@ -93,7 +93,9 @@ class _RatingScreenState extends State<RatingScreen> {
                   child: RichText(
                     text: TextSpan(
                       text: 'Write feedback (Optional)',
-                      style: new TextStyle(fontSize: 20, color: Colors.black),
+                      style: new TextStyle(
+                          fontSize: deviceSizeHeight * .022,
+                          color: Colors.black),
                     ),
                   ),
                 ),

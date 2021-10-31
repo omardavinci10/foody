@@ -37,7 +37,7 @@ class _SearchPageState extends State<SearchPage> {
                   filled: true,
                   enabledBorder:
                       OutlineInputBorder(borderSide: BorderSide.none),
-                  hintText: 'Lookign for ..',
+                  hintText: 'Looking for ..',
                   hintStyle: TextStyle(
                     color: Colors.black26,
                   ),
