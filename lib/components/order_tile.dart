@@ -8,12 +8,14 @@ class OrderTile extends StatelessWidget {
   final int price;
   final String date;
   final String status;
+  final String time;
 
   OrderTile({
     required this.orderID,
     required this.price,
     required this.date,
     required this.status,
+    required this.time,
   });
 
   int compareTo(String bDate) {
@@ -86,7 +88,7 @@ class OrderTile extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      '245' + 'EGP',
+                      price.toString() + 'EGP',
                       style: TextStyle(
                         fontFamily: 'Urbanist-Bold',
                         fontWeight: FontWeight.w600,

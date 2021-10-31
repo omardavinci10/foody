@@ -15,19 +15,76 @@ class NotificationsScreen extends StatefulWidget {
   _NotificationsScreenState createState() => _NotificationsScreenState();
 }
 
-void fillOrders(BuildContext context) {
-  Provider.of<MyNotificationsData>(context).setOrders(
-      Provider.of<MyOrders>(context).getCurrentOrder,
-      Provider.of<MyOrders>(context).getPreviousOrderTiles);
-}
-
 class _NotificationsScreenState extends State<NotificationsScreen> {
+  Map<String, int> promoCodes = {'XYZ': 50, 'SUMMER2021': 40, 'FOODY25': 25};
+
   int noOfUnreadNotifications = 0;
-  OrderTile dummyOrderTile =
-      OrderTile(orderID: -1, price: -1, date: '1 Jan 1', status: 'Not Order');
+  OrderTile dummyOrderTile = OrderTile(
+    orderID: -1,
+    price: -1,
+    date: '1 Jan 1',
+    status: 'Not Order',
+    time: DateFormat.jm().format(DateTime.now()),
+  );
+
+  void fillOrders(BuildContext context) {
+    Provider.of<MyNotificationsData>(context).setOrders(
+      Provider.of<MyOrders>(context).getCurrentOrder,
+      Provider.of<MyOrders>(context).getPreviousOrderTiles,
+    );
+  }
+
+  void fillPromoCodes(BuildContext context) {
+    Provider.of<MyNotificationsData>(context).setPromoCodes(promoCodes);
+  }
+
+  List<NotificationTile> makeNotificationsTiles(BuildContext context) {
+    List<OrderTile> previousOrders =
+        Provider.of<MyOrders>(context).getPreviousOrderTiles;
+    List<NotificationTile> myNotificationTiles = previousOrders
+        .map(
+          (order) => NotificationTile(
+            orderOrPromo: 'O',
+            myTime: order.time,
+            currentOrder: order,
+            readOrUnread: Provider.of<MyNotificationsData>(context)
+                .getOrderState(order.orderID),
+          ),
+        )
+        .toList();
+
+    return myNotificationTiles;
+  }
+
+  List<NotificationTile> makePromoCodesNotificationsTiles(
+      BuildContext context) {
+    List<NotificationTile> myNotificationTiles = [];
+    promoCodes.forEach((key, value) {
+      myNotificationTiles.add(
+        NotificationTile(
+          orderOrPromo: 'P',
+          myTime: dummyOrderTile.time,
+          currentOrder: dummyOrderTile,
+          discountPercentage: value,
+          promoCode: key,
+        ),
+      );
+    });
+
+    return myNotificationTiles;
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    fillOrders(context);
+    fillPromoCodes(context);
+  }
+
   @override
   Widget build(BuildContext context) {
-    fillOrders(context);
+    makeNotificationsTiles(context);
     noOfUnreadNotifications =
         Provider.of<MyNotificationsData>(context).getNoOfUnreadNotifications;
     OrderTile currentOrder = Provider.of<MyOrders>(context).getCurrentOrder;
@@ -35,6 +92,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -46,7 +104,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               ),
               NotificationTile(
                 currentOrder: currentOrder,
-                myTime: DateTime.now(),
+                myTime: DateFormat.jm().format(DateTime.now()),
                 orderOrPromo: 'O',
               ),
               Text(
@@ -55,18 +113,23 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                   fontSize: 14.0,
                 ),
               ),
-              NotificationTile(
-                myTime: DateTime.now(),
-                orderOrPromo: 'P',
-                currentOrder: dummyOrderTile,
-                promoCode: 'XYZ',
-                discountPercentage: 50,
+              ListView(
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                physics: ScrollPhysics(),
+                children: makePromoCodesNotificationsTiles(context),
               ),
               Text(
                 'Recently',
                 style: kLightTextStyle.copyWith(
                   fontSize: 14.0,
                 ),
+              ),
+              ListView(
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                physics: ScrollPhysics(),
+                children: makeNotificationsTiles(context),
               ),
             ],
           ),
