@@ -5,6 +5,7 @@ import 'package:foody/screens/MenuScreen.dart';
 import 'package:foody/screens/SmartVillage_Screen.dart';
 import 'package:foody/screens/User_screen.dart';
 import 'package:foody/screens/Wallet_Screen.dart';
+import 'package:foody/screens/YourOrder_Screen.dart';
 import 'package:foody/screens/contactus_screen.dart';
 import 'package:foody/screens/search_screen.dart';
 import 'package:foody/screens/notifications_screen.dart';
@@ -43,7 +44,7 @@ class Foody extends StatelessWidget {
         theme: ThemeData(
           fontFamily: 'Urbanist',
         ),
-        initialRoute: SplashScreen.id,
+        initialRoute: YourOrderScreen.id,
         routes: {
           SplashScreen.id: (context) => SplashScreen(),
           WelcomeScreen.id: (context) => WelcomeScreen(),
@@ -64,6 +65,7 @@ class Foody extends StatelessWidget {
           CheckoutScreen.id: (context) => CheckoutScreen(),
           RatingScreen.id: (context) => RatingScreen(),
           TrackingScreen.id: (context) => TrackingScreen(),
+          YourOrderScreen.id: (context) => YourOrderScreen(),
         },
       ),
     );
