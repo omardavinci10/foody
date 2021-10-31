@@ -23,6 +23,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double deviceSizeHeight = MediaQuery.of(context).size.height;
+    double deviceSizeWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: ModalProgressHUD(
         inAsyncCall: showSpinner,
@@ -50,7 +52,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       'Sign up to continue!',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 20.0,
+                        fontSize: deviceSizeHeight * .022,
                         fontWeight: FontWeight.w600,
                         fontFamily: 'Urbanist-Bold',
                       ),
@@ -106,7 +108,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   Center(
                     child: Text(
                       'Note that we will use your phone number to verify your account',
-                      style: TextStyle(color: Colors.black54, fontSize: 11.0),
+                      style: TextStyle(
+                          color: Colors.black54,
+                          fontSize: deviceSizeHeight * .013),
                     ),
                   ),
                   RoundedButton(
@@ -133,7 +137,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                   child: Text(
                                     "Ok",
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 20),
+                                        color: Colors.white,
+                                        fontSize: deviceSizeHeight * .022),
                                   ),
                                   onPressed: () => Navigator.pop(context),
                                   color: Color.fromRGBO(0, 179, 134, 1.0),
@@ -176,7 +181,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                     child: Text(
                                       "Ok",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 20),
+                                          color: Colors.white,
+                                          fontSize: deviceSizeHeight * .022),
                                     ),
                                     onPressed: () => Navigator.pop(context),
                                     color: Color.fromRGBO(0, 179, 134, 1.0),
@@ -204,7 +210,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             'I already have an account',
                           ),
                           SizedBox(
-                            width: 5.0,
+                            width: deviceSizeWidth * .015,
                           ),
                           GestureDetector(
                             child: Text(

@@ -18,6 +18,8 @@ class SmartVillageScreen extends StatefulWidget {
 class _SmartVillageScreenState extends State<SmartVillageScreen> {
   @override
   Widget build(BuildContext context) {
+    double deviceSizeHeight = MediaQuery.of(context).size.height;
+    double deviceSizeWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xfffafafa),
@@ -28,7 +30,7 @@ class _SmartVillageScreenState extends State<SmartVillageScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 15.0,
+                  height: deviceSizeHeight * .015,
                 ),
                 Hero(
                   tag: 'logo',
@@ -50,7 +52,7 @@ class _SmartVillageScreenState extends State<SmartVillageScreen> {
                         'Where is your building in Smart Village?',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 14.0,
+                          fontSize: deviceSizeHeight * .017,
                           fontFamily: 'Urbanist-Bold',
                         ),
                       ),
@@ -244,6 +246,8 @@ final List<String> buildings = [
 ];
 
 Widget buildingCard(BuildContext context, int index) {
+  double deviceSizeHeight = MediaQuery.of(context).size.height;
+  double deviceSizeWidth = MediaQuery.of(context).size.width;
   return new Container(
     child: Card(
       child: Padding(
@@ -255,7 +259,7 @@ Widget buildingCard(BuildContext context, int index) {
               child: Row(children: <Widget>[
                 Text(
                   buildings[index],
-                  style: new TextStyle(fontSize: 12.0),
+                  style: new TextStyle(fontSize: deviceSizeHeight * 0.014),
                 ),
                 Spacer(),
               ]),
@@ -282,7 +286,7 @@ Widget customisedBottomSheet(BuildContext context) {
           child: Text("When menu do you want to see?",
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 20.0,
+                fontSize: deviceSizeHeight * 0.022,
                 fontFamily: 'Urbanist-Bold',
                 fontWeight: FontWeight.w600,
               )),
@@ -298,7 +302,7 @@ Widget customisedBottomSheet(BuildContext context) {
                   print("tapped");
                 },
                 child: Container(
-                  height: 100,
+                  height: deviceSizeHeight * 0.1,
                   width: deviceSizeWidth * 0.9,
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
@@ -329,7 +333,7 @@ Widget customisedBottomSheet(BuildContext context) {
                 },
                 child: Container(
                   width: deviceSizeWidth * 0.9,
-                  height: 100.0,
+                  height: deviceSizeHeight * 0.1,
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: RichText(

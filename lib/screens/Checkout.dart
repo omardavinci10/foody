@@ -58,7 +58,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                     text: TextSpan(
                                       text: 'Delivery Address',
                                       style: new TextStyle(
-                                          fontSize: 20,
+                                          fontSize: deviceSizeHeight * .022,
                                           fontFamily: 'Urbanist-Bold',
                                           fontWeight: FontWeight.w600,
                                           color: Colors.black),
@@ -88,7 +88,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                         " Building 16 - A",
                                         style: TextStyle(
                                           // color: Colors.black38,
-                                          fontSize: 14.0,
+                                          fontSize: deviceSizeHeight * .018,
                                           // fontWeight: FontWeight.bold,
                                         ),
                                       ),
@@ -131,7 +131,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                                           "Time to deliver",
                                                           style: TextStyle(
                                                             color: Colors.black,
-                                                            fontSize: 20.0,
+                                                            fontSize:
+                                                                deviceSizeHeight *
+                                                                    .022,
                                                             fontFamily:
                                                                 'Urbanist-Bold',
                                                             fontWeight:
@@ -187,7 +189,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                                   ),
                                                   RoundedButton(
                                                     color: kOrangeColorInHex,
-                                                    title: "Add promo",
+                                                    title: "Submit",
                                                     onPressed: () {
                                                       Navigator.pop(
                                                           context, true);
@@ -228,7 +230,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                               Expanded(
                                 child: Container(
                                   margin: EdgeInsets.symmetric(vertical: 12),
-                                  height: 50,
+                                  height: deviceSizeHeight * .05,
                                   child: TextField(
                                     decoration: InputDecoration(
                                       enabledBorder: OutlineInputBorder(
@@ -276,7 +278,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                     text: TextSpan(
                                       text: 'Delivery Time',
                                       style: new TextStyle(
-                                          fontSize: 20,
+                                          fontSize: deviceSizeHeight * .022,
                                           fontFamily: 'Urbanist-Bold',
                                           fontWeight: FontWeight.w600,
                                           color: Colors.black),
@@ -299,7 +301,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                     " 02:00 PM",
                                     style: TextStyle(
                                       // color: Colors.black38,
-                                      fontSize: 14.0,
+                                      fontSize: deviceSizeHeight * .018,
                                       // fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -317,8 +319,271 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                             BorderRadius.circular(5.0),
                                       ),
                                       context: context,
-                                      builder: ((builder) =>
-                                          customisedBottomSheet(context)));
+                                      builder: ((context) {
+                                        var selected = [
+                                          false,
+                                          false,
+                                          false,
+                                          false,
+                                          false,
+                                          false
+                                        ];
+                                        List<String> timesToDeliver = <String>[
+                                          '1:00 PM',
+                                          '2:00 PM',
+                                          '3:00 PM',
+                                          '4:00 PM',
+                                          '5:00 PM',
+                                        ];
+                                        void toggle(pos) {
+                                          for (var i = 0;
+                                              i < selected.length;
+                                              i++) {
+                                            if (i != pos) selected[i] = false;
+                                          }
+                                        }
+
+                                        return StatefulBuilder(builder:
+                                            (BuildContext context,
+                                                StateSetter setState) {
+                                          return Container(
+                                            height: deviceSizeHeight * .4,
+                                            // width: deviceSizeWidth,
+//margin: EdgeInsets.only(left: 20,right: 20,top: 20,bottom: 40),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: <Widget>[
+                                                Row(
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              left: 18.0),
+                                                      child: Text(
+                                                        "Time to deliver",
+                                                        style: TextStyle(
+                                                          color: Colors.black,
+                                                          fontSize:
+                                                              deviceSizeHeight *
+                                                                  .022,
+                                                          fontFamily:
+                                                              'Urbanist-Bold',
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              left: 20.0),
+                                                      child: ActionChip(
+                                                          side: BorderSide(
+                                                              color: Colors
+                                                                  .black12),
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  15),
+                                                          backgroundColor:
+                                                              selected[0] ==
+                                                                      true
+                                                                  ? Colors
+                                                                      .orangeAccent
+                                                                  : Colors
+                                                                      .white38,
+                                                          label: Text(
+                                                            timesToDeliver[0],
+                                                            style: TextStyle(
+                                                              color: selected[
+                                                                          0] ==
+                                                                      true
+                                                                  ? Colors.white
+                                                                  : Colors
+                                                                      .black12,
+                                                            ),
+                                                          ),
+                                                          onPressed: () {
+                                                            setState(() {
+                                                              toggle(0);
+                                                              selected[0] =
+                                                                  !selected[0];
+                                                              print(
+                                                                  selected[0]);
+                                                            });
+                                                          }),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              left: 20.0),
+                                                      child: ActionChip(
+                                                          side: BorderSide(
+                                                              color: Colors
+                                                                  .black12),
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  15),
+                                                          backgroundColor:
+                                                              selected[1] ==
+                                                                      true
+                                                                  ? Colors
+                                                                      .orangeAccent
+                                                                  : Colors
+                                                                      .white38,
+                                                          label: Text(
+                                                            timesToDeliver[1],
+                                                            style: TextStyle(
+                                                              color: selected[
+                                                                          1] ==
+                                                                      true
+                                                                  ? Colors.white
+                                                                  : Colors
+                                                                      .black12,
+                                                            ),
+                                                          ),
+                                                          onPressed: () {
+                                                            setState(() {
+                                                              toggle(1);
+                                                              selected[1] =
+                                                                  !selected[1];
+                                                            });
+                                                          }),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              left: 20.0),
+                                                      child: ActionChip(
+                                                          side: BorderSide(
+                                                              color: Colors
+                                                                  .black12),
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  15),
+                                                          backgroundColor:
+                                                              selected[2] ==
+                                                                      true
+                                                                  ? Colors
+                                                                      .orangeAccent
+                                                                  : Colors
+                                                                      .white38,
+                                                          label: Text(
+                                                            timesToDeliver[2],
+                                                            style: TextStyle(
+                                                              color: selected[
+                                                                          2] ==
+                                                                      true
+                                                                  ? Colors.white
+                                                                  : Colors
+                                                                      .black12,
+                                                            ),
+                                                          ),
+                                                          onPressed: () {
+                                                            setState(() {
+                                                              toggle(2);
+                                                              selected[2] =
+                                                                  !selected[2];
+                                                            });
+                                                          }),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              left: 20.0),
+                                                      child: ActionChip(
+                                                          side: BorderSide(
+                                                              color: Colors
+                                                                  .black12),
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  15),
+                                                          backgroundColor:
+                                                              selected[3] ==
+                                                                      true
+                                                                  ? Colors
+                                                                      .orangeAccent
+                                                                  : Colors
+                                                                      .white38,
+                                                          label: Text(
+                                                            timesToDeliver[3],
+                                                            style: TextStyle(
+                                                              color: selected[
+                                                                          3] ==
+                                                                      true
+                                                                  ? Colors.white
+                                                                  : Colors
+                                                                      .black12,
+                                                            ),
+                                                          ),
+                                                          onPressed: () {
+                                                            setState(() {
+                                                              toggle(3);
+                                                              selected[3] =
+                                                                  !selected[3];
+                                                            });
+                                                          }),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              left: 20.0),
+                                                      child: ActionChip(
+                                                          side: BorderSide(
+                                                              color: Colors
+                                                                  .black12),
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  15),
+                                                          backgroundColor:
+                                                              selected[4] ==
+                                                                      true
+                                                                  ? Colors
+                                                                      .orangeAccent
+                                                                  : Colors
+                                                                      .white38,
+                                                          label: Text(
+                                                            timesToDeliver[4],
+                                                            style: TextStyle(
+                                                              color: selected[
+                                                                          4] ==
+                                                                      true
+                                                                  ? Colors.white
+                                                                  : Colors
+                                                                      .black12,
+                                                            ),
+                                                          ),
+                                                          onPressed: () {
+                                                            setState(() {
+                                                              toggle(4);
+                                                              selected[4] =
+                                                                  !selected[4];
+                                                            });
+                                                          }),
+                                                    ),
+                                                  ],
+                                                ),
+                                                RoundedButton(
+                                                  color: kOrangeColorInHex,
+                                                  title: "Submit",
+                                                  onPressed: () {
+                                                    Navigator.pop(
+                                                        context, true);
+                                                  },
+                                                )
+                                              ],
+                                            ),
+                                          );
+                                        });
+                                      }));
                                 },
                                 child: Text(
                                   "Change",
@@ -355,7 +620,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                               text: TextSpan(
                                 text: 'Payment Method',
                                 style: new TextStyle(
-                                    fontSize: 20,
+                                    fontSize: deviceSizeHeight * .022,
                                     fontFamily: 'Urbanist-Bold',
                                     fontWeight: FontWeight.w600,
                                     color: Colors.black),
@@ -368,7 +633,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       SingleChildScrollView(
                         physics: NeverScrollableScrollPhysics(),
                         child: SizedBox(
-                          height: 150.0,
+                          height: deviceSizeHeight * .18,
                           child:
                               SingleSelectionPage(payments, Color(0xfffafafa)),
                         ),
@@ -393,7 +658,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                     text: TextSpan(
                                       text: 'Payment Summary',
                                       style: new TextStyle(
-                                          fontSize: 20,
+                                          fontSize: deviceSizeHeight * .022,
                                           fontFamily: 'Urbanist-Bold',
                                           fontWeight: FontWeight.w600,
                                           color: Colors.black),
@@ -413,7 +678,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                   "Subtotal",
                                   style: TextStyle(
                                     color: Colors.black38,
-                                    fontSize: 14.0,
+                                    fontSize: deviceSizeHeight * .018,
                                     fontFamily: 'Urbanist-Bold',
                                   ),
                                 ),
@@ -437,7 +702,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                   "Delivery fee",
                                   style: TextStyle(
                                     color: Colors.black38,
-                                    fontSize: 14.0,
+                                    fontSize: deviceSizeHeight * .018,
                                     fontFamily: 'Urbanist-Bold',
                                   ),
                                 ),
@@ -461,7 +726,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                   "Discount",
                                   style: TextStyle(
                                     color: Colors.black38,
-                                    fontSize: 14.0,
+                                    fontSize: deviceSizeHeight * .018,
                                     fontFamily: 'Urbanist-Bold',
                                   ),
                                 ),
@@ -486,7 +751,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                   "Wallet",
                                   style: TextStyle(
                                     color: Colors.black38,
-                                    fontSize: 14.0,
+                                    fontSize: deviceSizeHeight * .018,
                                     fontFamily: 'Urbanist-Bold',
                                   ),
                                 ),
@@ -511,7 +776,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                   "Total amount",
                                   style: TextStyle(
                                     // color: Colors.black38,
-                                    fontSize: 14.0,
+                                    fontSize: deviceSizeHeight * .018,
                                     fontFamily: 'Urbanist-Bold',
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -522,7 +787,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                   "${'EGP ' + sum.toStringAsFixed(2)}",
                                   style: TextStyle(
                                     // color: Colors.black38,
-                                    fontSize: 14.0,
+                                    fontSize: deviceSizeHeight * .018,
                                     fontFamily: 'Urbanist-Bold',
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -564,7 +829,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     hoverColor: Colors.black,
                     minWidth: deviceSizeWidth * .45,
                     // minWidth: 200.0,
-                    height: 47.0,
+                    height: deviceSizeHeight * .05,
                     child: Text(
                       "Back",
                       style: TextStyle(
@@ -586,7 +851,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     },
                     hoverColor: Colors.black,
                     minWidth: deviceSizeWidth * .45,
-                    height: 42.0,
+                    height: deviceSizeHeight * .041,
                     child: Text(
                       "Place Order",
                       style: TextStyle(
@@ -600,42 +865,4 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           )),
     );
   }
-}
-
-Widget customisedBottomSheet(BuildContext context) {
-  double deviceSizeHeight = MediaQuery.of(context).size.height;
-  double deviceSizeWidth = MediaQuery.of(context).size.width;
-  return Container(
-    height: deviceSizeHeight * .5,
-    // width: deviceSizeWidth,
-//margin: EdgeInsets.only(left: 20,right: 20,top: 20,bottom: 40),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget>[
-        Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 18.0),
-              child: Text(
-                "Time to deliver",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20.0,
-                  fontFamily: 'Urbanist-Bold',
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-          ],
-        ),
-        RoundedButton(
-          color: kOrangeColorInHex,
-          title: "Add promo",
-          onPressed: () {
-            Navigator.pop(context, true);
-          },
-        )
-      ],
-    ),
-  );
 }

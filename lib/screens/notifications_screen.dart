@@ -27,6 +27,8 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
       OrderTile(orderID: -1, price: -1, date: '1 Jan 1', status: 'Not Order');
   @override
   Widget build(BuildContext context) {
+    double deviceSizeHeight = MediaQuery.of(context).size.height;
+    double deviceSizeWidth = MediaQuery.of(context).size.width;
     fillOrders(context);
     noOfUnreadNotifications =
         Provider.of<MyNotificationsData>(context).getNoOfUnreadNotifications;
@@ -41,7 +43,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               Text(
                 'Just now',
                 style: kLightTextStyle.copyWith(
-                  fontSize: 14.0,
+                  fontSize: deviceSizeHeight * .017,
                 ),
               ),
               NotificationTile(
@@ -52,7 +54,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               Text(
                 'Today',
                 style: kLightTextStyle.copyWith(
-                  fontSize: 14.0,
+                  fontSize: deviceSizeHeight * .017,
                 ),
               ),
               NotificationTile(
@@ -65,7 +67,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               Text(
                 'Recently',
                 style: kLightTextStyle.copyWith(
-                  fontSize: 14.0,
+                  fontSize: deviceSizeHeight * .017,
                 ),
               ),
             ],
