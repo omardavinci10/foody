@@ -66,27 +66,6 @@ class Foody extends StatelessWidget {
           TrackingScreen.id: (context) => TrackingScreen(),
         },
       ),
-      initialRoute: SearchPage.id,
-      routes: {
-        SplashScreen.id: (context) => SplashScreen(),
-        WelcomeScreen.id: (context) => WelcomeScreen(),
-        LoginScreen.id: (context) => LoginScreen(),
-        RegistrationScreen.id: (context) => RegistrationScreen(),
-        UserPage.id: (context) => UserPage(),
-        ContactUsScreen.id: (context) => ContactUsScreen(),
-        HomePage.id: (context) => HomePage(),
-        SmartVillageScreen.id: (context) => SmartVillageScreen(),
-        // EmptyPage.id: (context) => EmptyPage(),
-        WalletScreen.id: (context) => WalletScreen(),
-        OrderScreen.id: (context) => OrderScreen(),
-        TrackOrdersScreen.id: (context) => TrackOrdersScreen(),
-        FoodDetails.id: (context) => FoodDetails(
-              imagePath: 'images/Contact_us.png',
-            ),
-        TrackOrdersScreen.id: (context) => TrackOrdersScreen(),
-        SmartVillageScreen.id: (context) => SmartVillageScreen(),
-        SearchPage.id: (context) => SearchPage(),
-      },
     );
   }
 }

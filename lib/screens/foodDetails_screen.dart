@@ -121,28 +121,31 @@ class _FoodDetailsState extends State<FoodDetails> {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 color: Colors.white,
-                child: Column(children: [
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10.0, bottom: 10),
-                        child: Text(
-                          "Size",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Padding(
+                          padding:
+                              const EdgeInsets.only(left: 10.0, bottom: 10),
+                          child: Text(
+                            "Size",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
                         ),
+                      ],
+                    ),
+                    SingleChildScrollView(
+                      physics: NeverScrollableScrollPhysics(),
+                      child: SizedBox(
+                        height: 200.0,
+                        child: SingleSelectionPage(size, Colors.white),
                       ),
-                    ],
-                  ),
 
-                SingleChildScrollView(
-                  physics: NeverScrollableScrollPhysics(),
-                  child: SizedBox(
-                    height: 200.0,
-                    child: SingleSelectionPage(size, Colors.white),
-                  ),
-
-                  //  child: Column,
-                ]),
+                      //  child: Column,
+                    )
+                  ],
+                ),
               ),
             ),
             Padding(
