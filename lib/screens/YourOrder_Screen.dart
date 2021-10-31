@@ -310,7 +310,7 @@ class _YourOrderScreenState extends State<YourOrderScreen> {
             child: Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.only(left: 20.0, bottom: 10),
                   child: RichText(
                     text: TextSpan(
                       text: 'Delivery Address',
@@ -346,7 +346,7 @@ class _YourOrderScreenState extends State<YourOrderScreen> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.only(left: 20.0, top: 20),
                     child: RichText(
                       text: TextSpan(
                         text: 'Payment Method',
@@ -367,7 +367,7 @@ class _YourOrderScreenState extends State<YourOrderScreen> {
             child: Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
+                  padding: const EdgeInsets.only(left: 20.0, top: 10),
                   child: RichText(
                     text: TextSpan(
                       text: 'Cash',
@@ -531,6 +531,33 @@ class _YourOrderScreenState extends State<YourOrderScreen> {
                       ],
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 18.0),
+                    child: Material(
+                      // color: kOrangeColorInHex,
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: MaterialButton(
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(color: Colors.black, width: 01),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        onPressed: () {
+                          // Navigator.pushNamedAndRemoveUntil(
+                          //     context, HomePage.id, (route) => false);
+                        },
+                        hoverColor: Colors.black,
+                        minWidth: deviceSizeWidth * .95,
+                        // minWidth: 200.0,
+                        height: 47.0,
+                        child: Text(
+                          "Need help?",
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -545,7 +572,7 @@ class _YourOrderScreenState extends State<YourOrderScreen> {
     print(sum);
     return Container(
       child: Padding(
-        padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+        padding: const EdgeInsets.only(left: 10.0, right: 8.0),
         child: Column(
           children: <Widget>[
             Padding(

@@ -12,40 +12,31 @@ class LoginButtons extends StatelessWidget {
     List<Widget> mySocials = [];
     mySocials.add(
       Expanded(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: AppleAuthButton(
-            text: 'Apple',
-            style: kAuthButtonStyle,
-            onPressed: () {},
-            darkMode: false,
-          ),
+        child: AppleAuthButton(
+          text: 'Apple',
+          style: kAuthButtonStyle,
+          onPressed: () {},
+          darkMode: false,
         ),
       ),
     );
     mySocials.add(
       Expanded(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: GoogleAuthButton(
-            text: 'Google',
-            style: kAuthButtonStyle,
-            onPressed: () {},
-            darkMode: false,
-          ),
+        child: GoogleAuthButton(
+          text: 'Google',
+          style: kAuthButtonStyle,
+          onPressed: () {},
+          darkMode: false,
         ),
       ),
     );
     mySocials.add(
       Expanded(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: FacebookAuthButton(
-            text: 'Facebook',
-            style: kAuthButtonStyle,
-            onPressed: () {},
-            darkMode: false,
-          ),
+        child: FacebookAuthButton(
+          text: 'Facebook',
+          style: kAuthButtonStyle,
+          onPressed: () {},
+          darkMode: false,
         ),
       ),
     );

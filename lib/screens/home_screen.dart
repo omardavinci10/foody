@@ -73,134 +73,162 @@ class _HomePageState extends State<HomePage> {
 
       /// Drawer/////////////////////////////////////
       drawer: Drawer(
-        child: new ListView(
+        child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 180.0, top: 8),
-              child: CircleAvatar(
-                  radius: 50, backgroundImage: AssetImage('images/logo1.png')),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, top: 20, bottom: 0),
-              child: Text(
-                'Mohammed Ahmed',
-                style: TextStyle(
-                  // color: Colors.black,
-                  fontSize: deviceSizeHeight * .017,
-                  // fontFamily: 'Urbanist-Bold',
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, top: 8, bottom: 8),
-              child: Text(
-                '+20 111 222 3333',
-                style: TextStyle(
-                  color: Colors.black38,
-                  fontSize: deviceSizeHeight * .017,
-                  // fontFamily: 'Urbanist-Bold',
-                  // fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            Divider(
-              indent: 20,
-              endIndent: 20,
-            ),
-            Padding(padding: EdgeInsets.only(top: 8)),
-            ListTile(
-                title: Text("Menu"),
-                leading: Icon(Icons.flip_to_front),
-                onTap: () {
-                  setState(() {
-                    title = "Menu";
-                    body = OrderScreen();
-                  });
-                }),
-            ListTile(
-                title: Text("Your Wallet"),
-                leading: FaIcon(FontAwesomeIcons.wallet),
-                onTap: () {
-                  setState(() {
-                    Navigator.pop(context);
-                    title = "Wallet";
-                    body = WalletScreen();
-                  });
-                }),
-            ListTile(
-                title: Text("Profile"),
-                leading: FaIcon(FontAwesomeIcons.user),
-                onTap: () {
-                  setState(() {
-                    Navigator.pop(context);
-                    title = "Profile";
-                    body = UserPage();
-                  });
-                  /*Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => UserPage()));
-                    */
-                }),
-            ListTile(
-                title: Text("Track Orders"),
-                leading: FaIcon(FontAwesomeIcons.listUl),
-                onTap: () {
-                  setState(() {
-                    Navigator.pop(context);
-                    title = "My Orders";
-                    body = TrackOrdersScreen();
-                  });
-                }),
-            ListTile(
-                title: Text("Notifications"),
-                leading: FaIcon(FontAwesomeIcons.bell),
-                trailing: CircleAvatar(
-                  radius: 12.0,
-                  child: Text(
-                    noOfUnreadNotifications.toString(),
-                    style: TextStyle(
-                      color: (noOfUnreadNotifications == 0)
-                          ? kLightWhiteColor
-                          : Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Urbanist-Bold',
+            Expanded(
+              child: new ListView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 180.0, top: 8),
+                    child: CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage('images/logo1.png')),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(left: 20, top: 20, bottom: 0),
+                    child: Text(
+                      'Mohammed Ahmed',
+                      style: TextStyle(
+                        // color: Colors.black,
+                        fontSize: deviceSizeHeight * .025,
+                        // fontFamily: 'Urbanist-Bold',
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
-                  backgroundColor: (noOfUnreadNotifications == 0)
-                      ? kLightWhiteColor
-                      : kOrangeColorInHex,
-                ),
-                onTap: () {
-                  setState(() {
-                    Navigator.pop(context);
-                    title = "Notifications";
-                    body = NotificationsScreen();
-                  });
-                }),
-            ListTile(
-              title: Text("Contact Us"),
-              onTap: () {
-                setState(() {
-                  title = "Contact Us";
-                  Navigator.pop(context);
-                  body = ContactUsScreen();
-                });
-              },
-              leading: FaIcon(FontAwesomeIcons.headset),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 200),
-              child: _createFooterItem(
-                icon: Icons.logout,
-                text: 'Logout',
-                onTap: () {
-                  setState(() {
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, LoginScreen.id, (route) => false);
-                  });
-                },
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, top: 8, bottom: 8),
+                    child: Text(
+                      '+20 111 222 3333',
+                      style: TextStyle(
+                        color: Colors.black38,
+                        fontSize: deviceSizeHeight * .02,
+                        // fontFamily: 'Urbanist-Bold',
+                        // fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    indent: 20,
+                    endIndent: 20,
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 8)),
+                  ListTile(
+                      title: Text("Menu"),
+                      leading: Icon(Icons.flip_to_front),
+                      onTap: () {
+                        setState(() {
+                          title = "Menu";
+                          body = OrderScreen();
+                        });
+                      }),
+                  ListTile(
+                      title: Text("Your Wallet"),
+                      leading: FaIcon(FontAwesomeIcons.wallet),
+                      trailing: Container(
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          child: Text(
+                            "05.00 EGP",
+                            style: TextStyle(
+                              color: kOrangeColorInHex,
+                              // fontFamily: 'Urbanist-Bold',
+                            ),
+                          ),
+                        ),
+                      ),
+                      onTap: () {
+                        setState(() {
+                          Navigator.pop(context);
+                          title = "Wallet";
+                          body = WalletScreen();
+                        });
+                      }),
+                  ListTile(
+                      title: Text("Profile"),
+                      leading: FaIcon(FontAwesomeIcons.user),
+                      onTap: () {
+                        setState(() {
+                          Navigator.pop(context);
+                          title = "Profile";
+                          body = UserPage();
+                        });
+                        /*Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => UserPage()));
+                          */
+                      }),
+                  ListTile(
+                      title: Text("Track Orders"),
+                      leading: FaIcon(FontAwesomeIcons.listUl),
+                      onTap: () {
+                        setState(() {
+                          Navigator.pop(context);
+                          title = "My Orders";
+                          body = TrackOrdersScreen();
+                        });
+                      }),
+                  ListTile(
+                      title: Text("Notifications"),
+                      leading: FaIcon(FontAwesomeIcons.bell),
+                      trailing: CircleAvatar(
+                        radius: 12.0,
+                        child: Text(
+                          noOfUnreadNotifications.toString(),
+                          style: TextStyle(
+                            color: (noOfUnreadNotifications == 0)
+                                ? kLightWhiteColor
+                                : Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Urbanist-Bold',
+                          ),
+                        ),
+                        backgroundColor: (noOfUnreadNotifications == 0)
+                            ? kLightWhiteColor
+                            : kOrangeColorInHex,
+                      ),
+                      onTap: () {
+                        setState(() {
+                          Navigator.pop(context);
+                          title = "Notifications";
+                          body = NotificationsScreen();
+                        });
+                      }),
+                  ListTile(
+                    title: Text("Contact Us"),
+                    onTap: () {
+                      setState(() {
+                        title = "Contact Us";
+                        Navigator.pop(context);
+                        body = ContactUsScreen();
+                      });
+                    },
+                    leading: FaIcon(FontAwesomeIcons.headset),
+                  ),
+                ],
               ),
-            )
+            ),
+            Container(
+                // This align moves the children to the bottom
+                child: Align(
+                    alignment: FractionalOffset.bottomCenter,
+                    // This container holds all the children that will be aligned
+                    // on the bottom and should not scroll with the above ListView
+                    child: Container(
+                        child: Column(
+                      children: <Widget>[
+                        ListTile(
+                            leading: Icon(Icons.logout),
+                            title: Text('Logout'),
+                            onTap: () {
+                              setState(() {
+                                Navigator.pop(context);
+                                title = "My Orders";
+                                body = LoginScreen();
+                              });
+                            }),
+                      ],
+                    ))))
           ],
         ),
       ),

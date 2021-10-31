@@ -38,7 +38,7 @@ class _WalletScreenState extends State<WalletScreen> {
             Container(
               width: deviceSizeWidth * 0.95,
               child: Padding(
-                padding: const EdgeInsets.only(top: 50.0),
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
                 child: Card(
                   elevation: 5,
                   shape: RoundedRectangleBorder(
@@ -47,7 +47,7 @@ class _WalletScreenState extends State<WalletScreen> {
                   color: kOrangeColorInHex,
                   child: Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 15, horizontal: 8),
+                          vertical: 8, horizontal: 8),
                       child: RichText(
                         text: TextSpan(
                           //   style: Theme.of(context).textTheme.body1,
@@ -103,7 +103,7 @@ class _WalletScreenState extends State<WalletScreen> {
                         "${DateFormat('dd MMM yyyy').format(wallet.date).toString()}",
                         style: TextStyle(
                           color: Colors.black38,
-                          fontSize: deviceSizeHeight * 0.016,
+                          fontSize: deviceSizeHeight * 0.023,
                           fontFamily: 'Urbanist-Bold',
                         ),
                       ),
@@ -114,7 +114,7 @@ class _WalletScreenState extends State<WalletScreen> {
                         style: TextStyle(
                           color:
                               (wallet.budget < 0) ? Colors.red : Colors.green,
-                          fontSize: deviceSizeHeight * 0.016,
+                          fontSize: deviceSizeHeight * 0.023,
                         ),
                       ),
                       // Spacer(),

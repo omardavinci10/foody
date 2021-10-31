@@ -52,7 +52,7 @@ class _SmartVillageScreenState extends State<SmartVillageScreen> {
                         'Where is your building in Smart Village?',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: deviceSizeHeight * .017,
+                          fontSize: deviceSizeHeight * .025,
                           fontFamily: 'Urbanist-Bold',
                         ),
                       ),
@@ -69,106 +69,6 @@ class _SmartVillageScreenState extends State<SmartVillageScreen> {
                     ),
                   ],
                 ),
-                /*Card(
-                  child: new InkWell(
-                    onTap: () {
-                      print("tapped");
-                    },
-                    child: Container(
-                      width: 300.0,
-                      height: 50.0,
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Text(
-                          'A - 1 ',
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Card(
-                  child: new InkWell(
-                    onTap: () {
-                      print("tapped");
-                    },
-                    child: Container(
-                      width: 300.0,
-                      height: 50.0,
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Text(
-                          'A - 2 ',
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Card(
-                  child: new InkWell(
-                    onTap: () {
-                      print("tapped");
-                    },
-                    child: Container(
-                      width: 300.0,
-                      height: 50.0,
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Text(
-                          'A - 3 ',
-                        ),
-                      ),
-                    ),
-                  ),
-                ),*/
-
-/*
-                FloatingSearchBar(
-                  height: 10,
-                  width: 50,
-                  hint: 'Search...',
-                  scrollPadding: const EdgeInsets.only(top: 16, bottom: 20),
-                  transitionDuration: const Duration(milliseconds: 800),
-                  transitionCurve: Curves.easeInOut,
-                  physics: const BouncingScrollPhysics(),
-                  openAxisAlignment: 0.0,
-                  debounceDelay: const Duration(milliseconds: 500),
-                  onQueryChanged: (query) {
-                    // Call your model, bloc, controller here.
-                  },
-                  // Specify a custom transition to be used for
-                  // animating between opened and closed stated.
-                  transition: CircularFloatingSearchBarTransition(),
-                  actions: [
-                    FloatingSearchBarAction(
-                      showIfOpened: false,
-                      child: CircularButton(
-                        icon: const Icon(Icons.place),
-                        onPressed: () {},
-                      ),
-                    ),
-                    FloatingSearchBarAction.searchToClear(
-                      showIfClosed: false,
-                    ),
-                  ],
-                  builder:
-                      (BuildContext context, Animation<double> transition) {
-                    return ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Material(
-                        color: Colors.white,
-                        elevation: 4.0,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: Colors.accents.map((color) {
-                            return Container(height: 112, color: color);
-                          }).toList(),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-*/
-
                 Row(
                   children: [
                     Expanded(
@@ -236,6 +136,49 @@ class _SmartVillageScreenState extends State<SmartVillageScreen> {
       ),
     );
   }
+
+  // var isSelected = [false, false, false, false];
+  bool selected = false;
+
+  Widget buildingCard(BuildContext context, int index) {
+    double deviceSizeHeight = MediaQuery.of(context).size.height;
+    double deviceSizeWidth = MediaQuery.of(context).size.width;
+    return new Container(
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            selected = !selected;
+          });
+        },
+        child: Card(
+          shape: selected
+              ? new RoundedRectangleBorder(
+                  side: new BorderSide(color: kOrangeColorInHex, width: 0.5),
+                  borderRadius: BorderRadius.circular(4.0))
+              : new RoundedRectangleBorder(
+                  side: new BorderSide(color: Colors.white, width: 2.0),
+                  borderRadius: BorderRadius.circular(4.0)),
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
+                  child: Row(children: <Widget>[
+                    Text(
+                      buildings[index],
+                      style: new TextStyle(fontSize: deviceSizeHeight * 0.017),
+                    ),
+                    Spacer(),
+                  ]),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 final List<String> buildings = [
@@ -244,32 +187,6 @@ final List<String> buildings = [
   "A - 3",
   "A - 4 ",
 ];
-
-Widget buildingCard(BuildContext context, int index) {
-  double deviceSizeHeight = MediaQuery.of(context).size.height;
-  double deviceSizeWidth = MediaQuery.of(context).size.width;
-  return new Container(
-    child: Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
-              child: Row(children: <Widget>[
-                Text(
-                  buildings[index],
-                  style: new TextStyle(fontSize: deviceSizeHeight * 0.014),
-                ),
-                Spacer(),
-              ]),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
-}
 
 Widget customisedBottomSheet(BuildContext context) {
   double deviceSizeHeight = MediaQuery.of(context).size.height;
@@ -333,7 +250,7 @@ Widget customisedBottomSheet(BuildContext context) {
                 },
                 child: Container(
                   width: deviceSizeWidth * 0.9,
-                  height: deviceSizeHeight * 0.1,
+                  height: deviceSizeHeight * 0.12,
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: RichText(
