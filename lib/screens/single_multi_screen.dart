@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Movie {
-  Movie(this.movieName);
+class Content {
+  Content(this.movieName);
 
   String movieName;
   bool isSelected = false;
@@ -90,7 +90,7 @@ class _SingleSelectionPageState extends State<SingleSelectionPage> {
 }
 
 class MultiSelectionExample extends StatefulWidget {
-  List<Movie> favoriteMovies;
+  List<Content> favoriteMovies;
 
   MultiSelectionExample(this.favoriteMovies);
 

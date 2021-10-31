@@ -33,6 +33,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double deviceSizeHeight = MediaQuery.of(context).size.height;
+    double deviceSizeWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: ModalProgressHUD(
         inAsyncCall: showSpinner,
@@ -45,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 15.0,
+                    height: deviceSizeHeight * .017,
                   ),
                   Hero(
                     tag: 'logo',
@@ -60,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       'Welcome Back!',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 22.0,
+                        fontSize: deviceSizeHeight * .024,
                         fontFamily: 'Urbanist-Bold',
                         fontWeight: FontWeight.w600,
                       ),
@@ -174,7 +176,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   child: Text(
                                     "Ok",
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 20),
+                                        color: Colors.white,
+                                        fontSize: deviceSizeHeight * .022),
                                   ),
                                   onPressed: () => Navigator.pop(context),
                                   color: Color.fromRGBO(0, 179, 134, 1.0),
@@ -224,7 +227,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: 15.0,
+                    height: deviceSizeHeight * .017,
                   ),
                   Center(
                     child: Text(
@@ -233,7 +236,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: 15.0,
+                    height: deviceSizeHeight * .017,
                   ),
                   LoginButtons(),
                 ].reversed.toList(),

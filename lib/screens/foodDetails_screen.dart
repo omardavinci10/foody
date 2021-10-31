@@ -31,17 +31,17 @@ class FoodDetails extends StatefulWidget {
 class _FoodDetailsState extends State<FoodDetails> {
   var number = 1;
   List<String> size = ['Small', 'Medium', 'Large'];
-  List<Movie> sideDish = [
-    Movie('Spicy'),
-    Movie('Cheese Sauce'),
-    Movie('Pepperoni'),
-    Movie('Extra Chicken'),
+  List<Content> sideDish = [
+    Content('Spicy'),
+    Content('Cheese Sauce'),
+    Content('Pepperoni'),
+    Content('Extra Chicken'),
   ];
-  List<Movie> extra = [
-    Movie('Spicy'),
-    Movie('Cheese Sauce'),
-    Movie('Pepperoni'),
-    Movie('Extra Chicken'),
+  List<Content> extra = [
+    Content('Spicy'),
+    Content('Cheese Sauce'),
+    Content('Pepperoni'),
+    Content('Extra Chicken'),
   ];
   final Note = TextEditingController();
 
@@ -74,13 +74,13 @@ class _FoodDetailsState extends State<FoodDetails> {
                     },
                     child: Icon(
                       FontAwesomeIcons.minus,
-                      size: 20,
+                      size: deviceSizeHeight * .022,
                       color: Colors.black26,
                     ),
                   ),
                   Text(
                     number.toString(),
-                    style: TextStyle(fontSize: 30),
+                    style: TextStyle(fontSize: deviceSizeHeight * .03),
                   ),
                   MaterialButton(
                     elevation: 0,
@@ -94,7 +94,7 @@ class _FoodDetailsState extends State<FoodDetails> {
                     },
                     child: Icon(
                       FontAwesomeIcons.plus,
-                      size: 20,
+                      size: deviceSizeHeight * .022,
                       color: kOrangeColorInHex,
                     ),
                   ),
@@ -139,7 +139,7 @@ class _FoodDetailsState extends State<FoodDetails> {
                     SingleChildScrollView(
                       physics: NeverScrollableScrollPhysics(),
                       child: SizedBox(
-                        height: 200.0,
+                        height: deviceSizeHeight * .25,
                         child: SingleSelectionPage(size, Colors.white),
                       ),
 
@@ -166,7 +166,7 @@ class _FoodDetailsState extends State<FoodDetails> {
                     ),
                     children: [
                       SizedBox(
-                        height: 300.0,
+                        height: deviceSizeHeight * .35,
                         child: MultiSelectionExample(sideDish),
                       )
                     ],
@@ -196,7 +196,7 @@ class _FoodDetailsState extends State<FoodDetails> {
                     ),
                     children: [
                       SizedBox(
-                        height: 300.0,
+                        height: deviceSizeHeight * .35,
                         child: MultiSelectionExample(sideDish),
                       )
                     ],
@@ -255,8 +255,8 @@ class _FoodDetailsState extends State<FoodDetails> {
                     Navigator.pushNamed(context, BasketScreen.id);
                   },
                   hoverColor: Colors.black,
-                  minWidth: 200.0,
-                  height: 42.0,
+                  minWidth: deviceSizeWidth * .7,
+                  height: deviceSizeHeight * .042,
                   child: Container(
                     width: deviceSizeWidth * .8,
                     child: Row(

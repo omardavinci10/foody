@@ -21,6 +21,8 @@ class _UserPageState extends State<UserPage> {
   final emailAddress = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    double deviceSizeHeight = MediaQuery.of(context).size.height;
+    double deviceSizeWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color(0xfffafafa),
       extendBodyBehindAppBar: true,
@@ -47,7 +49,8 @@ class _UserPageState extends State<UserPage> {
             ),
             Text(
               "Personal Details",
-              style: TextStyle(color: Colors.black38, fontSize: 15),
+              style: TextStyle(
+                  color: Colors.black38, fontSize: deviceSizeHeight * 0.017),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 15, right: 15),
@@ -158,7 +161,8 @@ class _UserPageState extends State<UserPage> {
             ),
             Text(
               "Account Settings",
-              style: TextStyle(color: Colors.black38, fontSize: 15),
+              style: TextStyle(
+                  color: Colors.black38, fontSize: deviceSizeHeight * 0.017),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 15, right: 15),
@@ -223,8 +227,8 @@ class _UserPageState extends State<UserPage> {
                   onPressed: () {
                     print("change password");
                   },
-                  minWidth: 200.0,
-                  height: 50.0,
+                  minWidth: deviceSizeHeight * 0.2,
+                  height: deviceSizeHeight * 0.05,
                   child: Text(
                     "Change Password",
                     style: TextStyle(

@@ -60,7 +60,8 @@ class _WalletScreenState extends State<WalletScreen> {
                             new TextSpan(
                               text: "   " +
                                   "${walletList[0].budget.toStringAsFixed(2) + 'EGP'}",
-                              style: new TextStyle(fontSize: 24),
+                              style: new TextStyle(
+                                  fontSize: deviceSizeHeight * 0.028),
                             ),
                           ],
                         ),
@@ -82,6 +83,8 @@ class _WalletScreenState extends State<WalletScreen> {
   }
 
   Widget buildTripCard(BuildContext context, int index) {
+    double deviceSizeHeight = MediaQuery.of(context).size.height;
+    double deviceSizeWidth = MediaQuery.of(context).size.width;
     final wallet = walletList[index];
     return Container(
       child: Padding(
@@ -100,7 +103,7 @@ class _WalletScreenState extends State<WalletScreen> {
                         "${DateFormat('dd MMM yyyy').format(wallet.date).toString()}",
                         style: TextStyle(
                           color: Colors.black38,
-                          fontSize: 14.0,
+                          fontSize: deviceSizeHeight * 0.016,
                           fontFamily: 'Urbanist-Bold',
                         ),
                       ),
@@ -111,7 +114,7 @@ class _WalletScreenState extends State<WalletScreen> {
                         style: TextStyle(
                           color:
                               (wallet.budget < 0) ? Colors.red : Colors.green,
-                          fontSize: 14.0,
+                          fontSize: deviceSizeHeight * 0.016,
                         ),
                       ),
                       // Spacer(),

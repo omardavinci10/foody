@@ -49,8 +49,7 @@ class _OrderScreenState extends State<OrderScreen> {
   ];
 
   // Color myColor = (Wallet.budget < 0) ? Colors.red : Colors.green;
-  double x = 0.0;
-  double y = 0.0;
+
   ItemScrollController? _controllerListView = ItemScrollController();
 
   void initState() {
@@ -66,14 +65,13 @@ class _OrderScreenState extends State<OrderScreen> {
   Widget build(BuildContext context) {
     double deviceSizeHeight = MediaQuery.of(context).size.height;
     double deviceSizeWidth = MediaQuery.of(context).size.width;
-    x = deviceSizeWidth;
-    y = deviceSizeHeight;
+
     return Scaffold(
       backgroundColor: Color(0xfffafafa),
       body: Column(
         children: [
           SizedBox(
-            height: 100,
+            height: deviceSizeHeight * .1,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
@@ -280,34 +278,41 @@ class _OrderScreenState extends State<OrderScreen> {
     }
   }
 
-  Widget buildFoodList(BuildContext context, int index, String subTitle) =>
-      Container(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    subTitle,
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
+  Widget buildFoodList(BuildContext context, int index, String subTitle) {
+    double y = MediaQuery.of(context).size.height;
+    double x = MediaQuery.of(context).size.width;
+    return Container(
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  subTitle,
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
-            SizedBox(
-              height: (orderList.length + 2) * y * .12,
-              child: ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: orderList.length,
-                  itemBuilder: (BuildContext context, int index) =>
-                      buildTripCard(context, index)),
-            ),
-          ],
-        ),
-      );
+          ),
+          SizedBox(
+            width: x,
+            height: (orderList.length + 2) * y * .12,
+            child: ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: orderList.length,
+                itemBuilder: (BuildContext context, int index) =>
+                    buildTripCard(context, index)),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget buildTripCard(BuildContext context, int index) {
+    double y = MediaQuery.of(context).size.height;
+    double x = MediaQuery.of(context).size.width;
     final wallet = orderList[index];
     return Container(
         child: Padding(
@@ -318,8 +323,6 @@ class _OrderScreenState extends State<OrderScreen> {
             borderRadius: BorderRadius.circular(10.0)),
         child: new InkWell(
           onTap: () {
-            print(x);
-            print(y);
             Navigator.push(
                 context,
                 PageRouteBuilder(
@@ -353,8 +356,8 @@ class _OrderScreenState extends State<OrderScreen> {
                         child: Image.asset(
                           orderList[0].imagePath,
                           fit: BoxFit.cover,
-                          width: 80,
-                          height: 80,
+                          width: y * .1,
+                          height: y * .1,
                         ),
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -431,11 +434,3 @@ class _OrderScreenState extends State<OrderScreen> {
     ));
   }
 }
-
-var bannerItems = ["Burger", "Cheese Chilly", "Noodles", "Pizza"];
-var bannerImage = [
-  "images/p1.jpg",
-  "images/p1.jpg",
-  "images/p1.jpg",
-  "images/p1.jpg",
-];

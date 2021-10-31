@@ -36,6 +36,9 @@ class _HomePageState extends State<HomePage> {
         Provider.of<MyNotificationsData>(context).getNoOfUnreadNotifications;
     //noOfUnreadNotifications = Provider.of<MyNotificationsData>(context).getNoOfUnreadNotifications;
 
+    double deviceSizeHeight = MediaQuery.of(context).size.height;
+    double deviceSizeWidth = MediaQuery.of(context).size.width;
+
     /// You can easily control the section for example inside the initState where you check
     /// if the user logged in, or other related logic
 
@@ -83,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                 'Mohammed Ahmed',
                 style: TextStyle(
                   // color: Colors.black,
-                  fontSize: 14.0,
+                  fontSize: deviceSizeHeight * .017,
                   // fontFamily: 'Urbanist-Bold',
                   fontWeight: FontWeight.w600,
                 ),
@@ -95,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                 '+20 111 222 3333',
                 style: TextStyle(
                   color: Colors.black38,
-                  fontSize: 14.0,
+                  fontSize: deviceSizeHeight * .017,
                   // fontFamily: 'Urbanist-Bold',
                   // fontWeight: FontWeight.w600,
                 ),
@@ -192,9 +195,8 @@ class _HomePageState extends State<HomePage> {
                 text: 'Logout',
                 onTap: () {
                   setState(() {
-                    title = "Logout";
-                    Navigator.pop(context);
-                    body = LoginScreen();
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, LoginScreen.id, (route) => false);
                   });
                 },
               ),
