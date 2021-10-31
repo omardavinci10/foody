@@ -94,14 +94,14 @@ class OrderTile extends StatelessWidget {
                           color: Colors.grey.shade400,
                         ),
                       ),
-                    ),
-                    Text(
-                      price.toString() + 'EGP',
-                      style: TextStyle(
-                        fontFamily: 'Urbanist-Bold',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 15.0,
-                        color: kOrangeColorInHex,
+                      Text(
+                        price.toString() + 'EGP',
+                        style: TextStyle(
+                          fontFamily: 'Urbanist-Bold',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 15.0,
+                          color: kOrangeColorInHex,
+                        ),
                       ),
                     ],
                   ),

@@ -75,15 +75,9 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
   }
 
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
+  Widget build(BuildContext context) {
     fillOrders(context);
     fillPromoCodes(context);
-  }
-
-  @override
-  Widget build(BuildContext context) {
     makeNotificationsTiles(context);
     noOfUnreadNotifications =
         Provider.of<MyNotificationsData>(context).getNoOfUnreadNotifications;
