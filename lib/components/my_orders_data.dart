@@ -24,6 +24,20 @@ class MyOrders extends ChangeNotifier {
     _previousOrderTiles.sort((a, b) => a.compareTo(b.date));
   }
 
+  OrderTile getOrderByID(int orderID) {
+    List<OrderTile> allOrders = _previousOrderTiles;
+    allOrders.add(_currentOrder);
+    allOrders.sort((a, b) => a.compareTo(b.date));
+    for (int i = 0; i < allOrders.length; i++) {
+      if (allOrders[i].orderID == orderID) {
+        return allOrders[i];
+      }
+    }
+    OrderTile dummy =
+        OrderTile(orderID: -1, price: -1, date: '1 Jan 1', status: 'not order');
+    return dummy;
+  }
+
   void changeCurrentOrder(int orderID, int price, String date, String status) {
     _currentOrder =
         OrderTile(orderID: orderID, price: price, date: date, status: status);

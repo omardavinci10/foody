@@ -15,11 +15,18 @@ class MyNotificationsData extends ChangeNotifier {
     }
   }
 
+  String getOrderState(int orderID) {
+    String myState = '';
+    if (_ordersIDs.containsKey(orderID)) {
+      myState = _ordersIDs[orderID]!;
+    }
+    return myState;
+  }
+
   void addNotification(int orderID) {
     if (_ordersIDs.containsKey(orderID)) {
       if (_ordersIDs[orderID] == 'U') {
         _noOfUnreadNotifications++;
-        _ordersIDs.update(orderID, (value) => 'R');
         notifyListeners();
       }
     }
@@ -27,9 +34,9 @@ class MyNotificationsData extends ChangeNotifier {
 
   void removeNotification(int orderID) {
     if (_ordersIDs.containsKey(orderID) == true) {
-      if (_ordersIDs[orderID] == 'R') {
+      if (_ordersIDs[orderID] == 'U') {
         _noOfUnreadNotifications--;
-        _ordersIDs.remove(orderID);
+        _ordersIDs.update(orderID, (value) => 'R');
         notifyListeners();
       }
     }

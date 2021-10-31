@@ -9,6 +9,7 @@ import 'package:foody/screens/contactus_screen.dart';
 import 'package:foody/screens/notifications_screen.dart';
 import 'package:foody/screens/splash_screen.dart';
 import 'package:foody/screens/track_orders.dart';
+import 'package:foody/screens/tracking_screen.dart';
 import 'package:foody/screens/welcome_screen.dart';
 import 'package:foody/screens/login_screen.dart';
 import 'package:foody/screens/registration_screen.dart';
@@ -61,6 +62,7 @@ class Foody extends StatelessWidget {
           BasketScreen.id: (context) => BasketScreen(),
           CheckoutScreen.id: (context) => CheckoutScreen(),
           RatingScreen.id: (context) => RatingScreen(),
+          TrackingScreen.id: (context) => TrackingScreen(),
         },
       ),
     );
