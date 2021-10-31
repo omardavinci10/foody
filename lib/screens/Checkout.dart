@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:foody/components/rounded_button.dart';
+import 'package:foody/screens/home_screen.dart';
 import 'package:foody/screens/single_multi_screen.dart';
 import 'package:intl/intl.dart';
 
@@ -557,7 +558,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       side: BorderSide(color: kOrangeColorInHex, width: 01),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     hoverColor: Colors.black,
                     minWidth: deviceSizeWidth * .45,
                     // minWidth: 200.0,
@@ -577,7 +580,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   color: kOrangeColorInHex,
                   borderRadius: BorderRadius.circular(10.0),
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, HomePage.id, (route) => false);
+                    },
                     hoverColor: Colors.black,
                     minWidth: deviceSizeWidth * .45,
                     height: 42.0,

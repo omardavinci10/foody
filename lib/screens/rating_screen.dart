@@ -116,7 +116,9 @@ class _RatingScreenState extends State<RatingScreen> {
             RoundedButton(
                 color: kOrangeColorInHex,
                 title: "Submit Feedback",
-                onPressed: () {})
+                onPressed: () {
+                  Navigator.pop(context);
+                })
           ],
         ),
       ),
