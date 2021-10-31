@@ -6,9 +6,11 @@ import 'package:foody/screens/SmartVillage_Screen.dart';
 import 'package:foody/screens/User_screen.dart';
 import 'package:foody/screens/Wallet_Screen.dart';
 import 'package:foody/screens/contactus_screen.dart';
+import 'package:foody/screens/search_screen.dart';
 import 'package:foody/screens/notifications_screen.dart';
 import 'package:foody/screens/splash_screen.dart';
 import 'package:foody/screens/track_orders.dart';
+import 'package:foody/screens/tracking_screen.dart';
 import 'package:foody/screens/welcome_screen.dart';
 import 'package:foody/screens/login_screen.dart';
 import 'package:foody/screens/registration_screen.dart';
@@ -58,35 +60,12 @@ class Foody extends StatelessWidget {
           FoodDetails.id: (context) =>
               FoodDetails(imagePath: 'images/Contact_us.png'),
           NotificationsScreen.id: (context) => NotificationsScreen(),
+          BasketScreen.id: (context) => BasketScreen(),
+          CheckoutScreen.id: (context) => CheckoutScreen(),
+          RatingScreen.id: (context) => RatingScreen(),
+          TrackingScreen.id: (context) => TrackingScreen(),
         },
       ),
-
-      initialRoute: RatingScreen.id,
-      routes: {
-        SplashScreen.id: (context) => SplashScreen(),
-        WelcomeScreen.id: (context) => WelcomeScreen(),
-        LoginScreen.id: (context) => LoginScreen(),
-        RegistrationScreen.id: (context) => RegistrationScreen(),
-        UserPage.id: (context) => UserPage(),
-        ContactUsScreen.id: (context) => ContactUsScreen(),
-        HomePage.id: (context) => HomePage(),
-        SmartVillageScreen.id: (context) => SmartVillageScreen(),
-        // EmptyPage.id: (context) => EmptyPage(),
-        WalletScreen.id: (context) => WalletScreen(),
-        OrderScreen.id: (context) => OrderScreen(),
-        TrackOrdersScreen.id: (context) => TrackOrdersScreen(),
-
-        BasketScreen.id: (context) => BasketScreen(),
-        CheckoutScreen.id: (context) => CheckoutScreen(),
-        RatingScreen.id: (context) => RatingScreen(),
-        FoodDetails.id: (context) => FoodDetails(
-              imagePath: 'images/Contact_us.png',
-            ),
-
-        FoodDetails.id: (context) =>
-            FoodDetails(imagePath: 'images/Contact_us.png'),
-        NotificationsScreen.id: (context) => NotificationsScreen(),
-      },
     );
   }
 }
