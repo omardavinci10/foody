@@ -51,11 +51,13 @@ class NotificationTile extends StatelessWidget {
   final String promoCode;
   final int discountPercentage;
   final String readOrUnread;
+  final BuildContext ctx;
 
   NotificationTile({
     required this.myTime,
     required this.orderOrPromo,
     required this.currentOrder,
+    required this.ctx,
     this.promoCode = 'XYZ',
     this.discountPercentage = 0,
     this.readOrUnread = 'U',
@@ -92,69 +94,74 @@ class NotificationTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: ListTile(
-        onTap: () {},
-        tileColor: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(5.0)),
-          side: BorderSide(
-              width: 0.5, color: Colors.black12, style: BorderStyle.solid),
-        ),
-        trailing: (readOrUnread == 'U')
-            ? Padding(
-                padding: const EdgeInsets.only(top: 30.0),
-                child: CircleAvatar(
-                  radius: 6.0,
-                  backgroundColor: kOrangeColorInHex,
-                ),
-              )
-            : Container(),
-        title: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                myTime,
-                style: kLightTextStyle.copyWith(
-                  fontSize: 15.0,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: 'Urbanist-Bold',
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                child: Text(
-                  (orderOrPromo == 'O')
-                      ? inLineText(context, currentOrder)
-                      : inLinePromoCode(promoCode, discountPercentage),
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
+    return Consumer<MyNotificationsData>(
+      builder: (mainCTX, value, child) => Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListTile(
+          onTap: () {
+            Provider.of<MyNotificationsData>(context, listen: false)
+                .markAllAsRead();
+          },
+          tileColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(5.0)),
+            side: BorderSide(
+                width: 0.5, color: Colors.black12, style: BorderStyle.solid),
+          ),
+          trailing: (readOrUnread == 'U')
+              ? Padding(
+                  padding: const EdgeInsets.only(top: 30.0),
+                  child: CircleAvatar(
+                    radius: 6.0,
+                    backgroundColor: kOrangeColorInHex,
+                  ),
+                )
+              : Container(),
+          title: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  myTime,
+                  style: kLightTextStyle.copyWith(
                     fontSize: 15.0,
-                    color: Colors.black,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Urbanist-Bold',
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 5.0),
-                child: GestureDetector(
-                  onTap: () {
-                    doYourFunction(context);
-                  },
+                Padding(
+                  padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
                   child: Text(
-                    actionText(orderOrPromo, currentOrder),
+                    (orderOrPromo == 'O')
+                        ? inLineText(context, currentOrder)
+                        : inLinePromoCode(promoCode, discountPercentage),
                     style: TextStyle(
-                      fontFamily: 'Urbanist-Bold',
                       fontWeight: FontWeight.w400,
                       fontSize: 15.0,
-                      color: kOrangeColorInHex,
+                      color: Colors.black,
                     ),
                   ),
                 ),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 5.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      doYourFunction(context);
+                    },
+                    child: Text(
+                      actionText(orderOrPromo, currentOrder),
+                      style: TextStyle(
+                        fontFamily: 'Urbanist-Bold',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 15.0,
+                        color: kOrangeColorInHex,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

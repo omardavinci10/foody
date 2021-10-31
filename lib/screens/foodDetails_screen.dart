@@ -139,7 +139,7 @@ class _FoodDetailsState extends State<FoodDetails> {
                     SingleChildScrollView(
                       physics: NeverScrollableScrollPhysics(),
                       child: SizedBox(
-                        height: deviceSizeHeight * .25,
+                        height: deviceSizeHeight * .3,
                         child: SingleSelectionPage(size, Colors.white),
                       ),
 

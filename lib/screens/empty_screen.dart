@@ -298,7 +298,7 @@ class _OrderScreenState extends State<OrderScreen> {
           ),
           SizedBox(
             width: x,
-            height: (orderList.length + 2) * y * .12,
+            height: (orderList.length + 2) * y * .14,
             child: ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: orderList.length,
@@ -364,7 +364,7 @@ class _OrderScreenState extends State<OrderScreen> {
                       Padding(
                         padding: const EdgeInsets.only(left: 10.0, top: 8),
                         child: Container(
-                          height: y * .16,
+                          height: y * .20,
                           width: x * .62,
                           child: Column(
                             children: [

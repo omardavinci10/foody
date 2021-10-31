@@ -45,6 +45,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
         .map(
           (order) => NotificationTile(
             orderOrPromo: 'O',
+            ctx: context,
             myTime: order.time,
             currentOrder: order,
             readOrUnread: Provider.of<MyNotificationsData>(context)
@@ -62,6 +63,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
     promoCodes.forEach((key, value) {
       myNotificationTiles.add(
         NotificationTile(
+          ctx: context,
           orderOrPromo: 'P',
           myTime: dummyOrderTile.time,
           currentOrder: dummyOrderTile,
@@ -100,6 +102,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               ),
               NotificationTile(
                 currentOrder: currentOrder,
+                ctx: context,
                 myTime: DateFormat.jm().format(DateTime.now()),
                 orderOrPromo: 'O',
               ),
