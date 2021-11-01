@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:foody/components/rounded_button.dart';
+import 'package:foody/screens/YourOrder_Screen.dart';
 import 'package:foody/screens/home_screen.dart';
 import 'package:foody/screens/single_multi_screen.dart';
+import 'package:foody/screens/tracking_screen.dart';
 import 'package:intl/intl.dart';
 
 import '../constants.dart';
@@ -144,6 +146,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                                     ],
                                                   ),
                                                   ToggleButtons(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
                                                     isSelected: isSelected,
                                                     children: <Widget>[
                                                       // first toggle button
@@ -839,7 +844,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     hoverColor: Colors.black,
                     minWidth: deviceSizeWidth * .45,
                     // minWidth: 200.0,
-                    height: deviceSizeHeight * .05,
+                    height: deviceSizeHeight * .07,
                     child: Text(
                       "Back",
                       style: TextStyle(
@@ -856,8 +861,13 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   borderRadius: BorderRadius.circular(10.0),
                   child: MaterialButton(
                     onPressed: () {
-                      Navigator.pushNamedAndRemoveUntil(
-                          context, HomePage.id, (route) => false);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => YourOrderScreen(
+                              orderID: 1827,
+                            ),
+                          ));
                     },
                     hoverColor: Colors.black,
                     minWidth: deviceSizeWidth * .45,
