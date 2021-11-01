@@ -85,9 +85,9 @@ const kAuthButtonStyle = AuthButtonStyle(
   iconSize: 20.0,
   splashColor: Colors.grey,
   borderWidth: 1.0,
-  padding: EdgeInsets.all(8.0),
+  padding: EdgeInsets.all(5.0),
   textStyle: TextStyle(
-    fontSize: 12.0,
+    fontSize: 10.0,
     fontWeight: FontWeight.w600,
     color: Colors.black54,
   ),

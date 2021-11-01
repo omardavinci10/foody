@@ -86,7 +86,7 @@ class _OrderScreenState extends State<OrderScreen> {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                '☰ Lunch Menu',
+                '☰ Breakfast Menu',
                 style: TextStyle(
                   color: kOrangeColorInHex,
                   fontFamily: 'Urbanist-Bold',
@@ -394,7 +394,7 @@ class _OrderScreenState extends State<OrderScreen> {
     final wallet = orderList[index];
     return Container(
         child: Padding(
-      padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Card(
         shape: RoundedRectangleBorder(
             side: BorderSide(color: Colors.black12),
@@ -473,28 +473,30 @@ class _OrderScreenState extends State<OrderScreen> {
                                   ),
                                 ),
                               ),
-                              Row(
-                                children: [
-                                  Text(
-                                    orderList[index].rate.toString(),
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      orderList[index].rate.toString(),
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
-                                  Icon(
-                                    Icons.local_fire_department,
-                                    color: Colors.orangeAccent,
-                                  ),
-                                  Spacer(),
-                                  IconButton(
-                                      onPressed: () {
-                                        print("aywaa");
-                                      },
-                                      icon: Icon(
-                                        Icons.add,
-                                        color: Colors.orangeAccent,
-                                      )),
-                                ],
+                                    Icon(
+                                      Icons.local_fire_department,
+                                      color: Colors.orangeAccent,
+                                    ),
+                                    Spacer(),
+                                    IconButton(
+                                        onPressed: () {
+                                          print("aywaa");
+                                        },
+                                        icon: Icon(
+                                          Icons.add,
+                                          color: Colors.orangeAccent,
+                                        )),
+                                  ],
+                                ),
                               ),
                             ],
                           ),
