@@ -63,11 +63,18 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Color(0xfffafafa),
         title: new Text(
           title,
-          style: TextStyle(
-            color: Colors.black,
-            fontFamily: 'Urbanist-Bold',
-            fontWeight: FontWeight.w600,
-          ),
+          style: title.toLowerCase().contains('building')
+              ? TextStyle(
+                  color: Colors.black26,
+                  fontSize: 15.0,
+                  fontFamily: 'Urbanist-Bold',
+                  fontWeight: FontWeight.w600,
+                )
+              : TextStyle(
+                  color: Colors.black,
+                  fontFamily: 'Urbanist-Bold',
+                  fontWeight: FontWeight.w600,
+                ),
         ),
       ),
 
@@ -115,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                 onTap: () {
                   setState(() {
                     Navigator.pop(context);
-                    title = "Menu";
+                    title = "🏘️ 16-A Building";
                     body = OrderScreen();
                   });
                 }),

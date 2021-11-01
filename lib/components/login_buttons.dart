@@ -49,8 +49,11 @@ class LoginButtons extends StatelessWidget {
         ),
       ),
     );
-    return Row(
-      children: mySocials,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      child: Row(
+        children: mySocials,
+      ),
     );
   }
 }
