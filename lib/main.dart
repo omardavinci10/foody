@@ -44,7 +44,7 @@ class Foody extends StatelessWidget {
         theme: ThemeData(
           fontFamily: 'Urbanist',
         ),
-        initialRoute: SplashScreen.id,
+        initialRoute: CheckoutScreen.id,
         routes: {
           SplashScreen.id: (context) => SplashScreen(),
           WelcomeScreen.id: (context) => WelcomeScreen(),

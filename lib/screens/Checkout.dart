@@ -383,19 +383,21 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                                           const EdgeInsets.only(
                                                               left: 20.0),
                                                       child: ActionChip(
-                                                          side: BorderSide(
-                                                              color: Colors
-                                                                  .black12),
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius: BorderRadius
+                                                                  .all(Radius
+                                                                      .circular(
+                                                                          5))),
                                                           padding:
                                                               EdgeInsets.all(
                                                                   15),
-                                                          backgroundColor:
-                                                              selected[0] ==
-                                                                      true
-                                                                  ? Colors
-                                                                      .orangeAccent
-                                                                  : Colors
-                                                                      .white38,
+                                                          backgroundColor: selected[
+                                                                      0] ==
+                                                                  true
+                                                              ? Colors
+                                                                  .orangeAccent
+                                                              : Color(
+                                                                  0xfff6f6f6),
                                                           label: Text(
                                                             timesToDeliver[0],
                                                             style: TextStyle(
@@ -422,19 +424,21 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                                           const EdgeInsets.only(
                                                               left: 20.0),
                                                       child: ActionChip(
-                                                          side: BorderSide(
-                                                              color: Colors
-                                                                  .black12),
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius: BorderRadius
+                                                                  .all(Radius
+                                                                      .circular(
+                                                                          5))),
                                                           padding:
                                                               EdgeInsets.all(
                                                                   15),
-                                                          backgroundColor:
-                                                              selected[1] ==
-                                                                      true
-                                                                  ? Colors
-                                                                      .orangeAccent
-                                                                  : Colors
-                                                                      .white38,
+                                                          backgroundColor: selected[
+                                                                      1] ==
+                                                                  true
+                                                              ? Colors
+                                                                  .orangeAccent
+                                                              : Color(
+                                                                  0xfff6f6f6),
                                                           label: Text(
                                                             timesToDeliver[1],
                                                             style: TextStyle(
@@ -459,19 +463,21 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                                           const EdgeInsets.only(
                                                               left: 20.0),
                                                       child: ActionChip(
-                                                          side: BorderSide(
-                                                              color: Colors
-                                                                  .black12),
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius: BorderRadius
+                                                                  .all(Radius
+                                                                      .circular(
+                                                                          5))),
                                                           padding:
                                                               EdgeInsets.all(
                                                                   15),
-                                                          backgroundColor:
-                                                              selected[2] ==
-                                                                      true
-                                                                  ? Colors
-                                                                      .orangeAccent
-                                                                  : Colors
-                                                                      .white38,
+                                                          backgroundColor: selected[
+                                                                      2] ==
+                                                                  true
+                                                              ? Colors
+                                                                  .orangeAccent
+                                                              : Color(
+                                                                  0xfff6f6f6),
                                                           label: Text(
                                                             timesToDeliver[2],
                                                             style: TextStyle(
@@ -500,19 +506,21 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                                           const EdgeInsets.only(
                                                               left: 20.0),
                                                       child: ActionChip(
-                                                          side: BorderSide(
-                                                              color: Colors
-                                                                  .black12),
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius: BorderRadius
+                                                                  .all(Radius
+                                                                      .circular(
+                                                                          5))),
                                                           padding:
                                                               EdgeInsets.all(
                                                                   15),
-                                                          backgroundColor:
-                                                              selected[3] ==
-                                                                      true
-                                                                  ? Colors
-                                                                      .orangeAccent
-                                                                  : Colors
-                                                                      .white38,
+                                                          backgroundColor: selected[
+                                                                      3] ==
+                                                                  true
+                                                              ? Colors
+                                                                  .orangeAccent
+                                                              : Color(
+                                                                  0xfff6f6f6),
                                                           label: Text(
                                                             timesToDeliver[3],
                                                             style: TextStyle(
@@ -537,19 +545,21 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                                           const EdgeInsets.only(
                                                               left: 20.0),
                                                       child: ActionChip(
-                                                          side: BorderSide(
-                                                              color: Colors
-                                                                  .black12),
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius: BorderRadius
+                                                                  .all(Radius
+                                                                      .circular(
+                                                                          5))),
                                                           padding:
                                                               EdgeInsets.all(
                                                                   15),
-                                                          backgroundColor:
-                                                              selected[4] ==
-                                                                      true
-                                                                  ? Colors
-                                                                      .orangeAccent
-                                                                  : Colors
-                                                                      .white38,
+                                                          backgroundColor: selected[
+                                                                      4] ==
+                                                                  true
+                                                              ? Colors
+                                                                  .orangeAccent
+                                                              : Color(
+                                                                  0xfff6f6f6),
                                                           label: Text(
                                                             timesToDeliver[4],
                                                             style: TextStyle(
