@@ -61,20 +61,25 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Color(0xfffafafa),
-        title: new Text(
-          title,
-          style: title.toLowerCase().contains('building')
-              ? TextStyle(
-                  color: Colors.black26,
-                  fontSize: 15.0,
-                  fontFamily: 'Urbanist-Bold',
-                  fontWeight: FontWeight.w600,
-                )
-              : TextStyle(
-                  color: Colors.black,
-                  fontFamily: 'Urbanist-Bold',
-                  fontWeight: FontWeight.w600,
-                ),
+        title: GestureDetector(
+          onTap: () {
+            if (title.contains('building')) {}
+          },
+          child: new Text(
+            title,
+            style: title.toLowerCase().contains('building')
+                ? TextStyle(
+                    color: Colors.black26,
+                    fontSize: 15.0,
+                    fontFamily: 'Urbanist-Bold',
+                    fontWeight: FontWeight.w600,
+                  )
+                : TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'Urbanist-Bold',
+                    fontWeight: FontWeight.w600,
+                  ),
+          ),
         ),
       ),
 

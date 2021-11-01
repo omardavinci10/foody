@@ -50,7 +50,7 @@ class LoginButtons extends StatelessWidget {
       ),
     );
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Row(
         children: mySocials,
       ),
