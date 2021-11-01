@@ -25,14 +25,11 @@ class LoginButtons extends StatelessWidget {
     );
     mySocials.add(
       Expanded(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: GoogleAuthButton(
-            text: 'Google',
-            style: kAuthButtonStyle,
-            onPressed: () {},
-            darkMode: false,
-          ),
+        child: GoogleAuthButton(
+          text: 'Google',
+          style: kAuthButtonStyle,
+          onPressed: () {},
+          darkMode: false,
         ),
       ),
     );
@@ -49,11 +46,8 @@ class LoginButtons extends StatelessWidget {
         ),
       ),
     );
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: Row(
-        children: mySocials,
-      ),
+    return Row(
+      children: mySocials,
     );
   }
 }
